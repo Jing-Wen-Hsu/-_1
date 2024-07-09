@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <title>留言板</title>
+
+    <style>
+        /*背景圖片*/
+        body {
+            background-image: url(./image/background2-1.png);
+            background-attachment: fixed;
+            background-position: right top;
+        }
+
+        /*招牌*/
+        .myTitle {
+            color: rgb(8, 71, 8);
+            font-weight: bold;
+        }
+
+        /* 使用 CSS 控制文字換行： */
+        .text-container {
+            word-wrap: break-word;
+        }
+
+        /*固定列*/
+        .rounded-btn {
+            border-radius: 10px;
+            /* 设置圆角的半径，根据需要调整 */
+            border: none;
+            font-weight: bold;
+            font-size: x-large;
+        }
+
+
+        /* 基本的表單樣式 */
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #2f632e;
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+
+        .contact-form .title-options {
+            margin-bottom: 5px;
+        }
+
+        .contact-form input[type="radio"] {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #38853bc9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #75b182cb;
+            color: #2f632e;
+        }
+
+        .title-options {
+            display: flex;
+        }
+
+        /* 文字 */
+        .myText {
+            color: #1d5a1c;
+            font-weight: bolder;
+            background-color: #cac0c0a9;
+        }
+
+        /*最下方資訊欄位*/
+        .box {
+            display: flex;
+            height: 200px;
+            padding: 5px 15px;
+            background-color: #b6f0c97c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 首頁最上方選單 -->
+        <div style="display: flex">
+
+            <!-- 招牌 -->
+            <div>
+                <pre>    </pre>
+                <h1 class="myTitle">多肉植物相談所</h1>
+                <h1 style="color: rgba(55, 95, 65, 0.719)">succulent plants</h1>
+            </div>
+            <!--succulent plants 多肉植物圖片1-->
+            <img src="./image/imag_succ_招牌照.jpg" style="width: 200px;height: 200px; display: block" />
+        </div>
+        <br>
+
+
+
+        <div class="d-flex sticky-top" style="height: 50px;font-size: larger;">
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page1_takeCareSuc.html';">多肉養護</button>
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page2_sucInterduction.html';">多肉圖鑑</button>
+
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page3_store.html';">購買多肉</button>
+
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(230, 199, 61, 0.719);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/front%20page_succulent.html';">回到首頁</button>
+        </div>
+
+
+        <div>
+            <br><br><br>
+            <h3 class="myText" style="padding: 30px;">
+                歡迎來到多肉植物相談所(๑´ㅂ`๑)<br><br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在這裡，您可以與我們分享您的經驗、提出問題，或是給我們的網站提供任何建議。<br>
+                我們非常期待聽到您的聲音，並願意為您提供解答。(^ω^)
+
+                請留下您的姓名、聯絡信箱和您想要討論的主題及內容，我們將盡快回覆您的留言。<br><br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您對於多肉植物的養護有任何疑問，或者對於特定品種的資訊感興趣，都歡迎在此與我們交流。
+            </h3>
+            <br>
+        </div>
+        <hr>
+
+        <div class="contact-form">
+            <h2>留言板</h2>
+            <form action="#" method="post">
+                <label for="name">姓名:</label>
+                <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required>
+
+                <div class="title-options">
+                    <label><input type="radio" name="title" value="先生" required> 先生</label>
+                    <label><input type="radio" name="title" value="小姐" required> 小姐</label>
+                    <label><input type="radio" name="title" value="其他" required> 暫不透露</label>
+                </div>
+
+                <label for="email">聯絡信箱:</label>
+                <input type="email" id="email" name="email" placeholder="請輸入您的信箱" required>
+
+                <label for="phone">聯絡電話:</label>
+                <input type="tel" id="phone" name="phone" placeholder="請輸入您的電話號碼">
+
+                <label for="phone">主題及內容:</label>
+                <input type="text" id="answer" name="answer" placeholder="請輸入您想分享諮詢的主題及內容  ε(*´･∀･｀)зﾞ"
+                    style="height: 200px;">
+                <input type="submit" value="提交">
+            </form>
+        </div>
+
+        <br>
+        <hr>
+        <div class="box">
+            <div style="font-weight: bold;">
+                <p>客服資訊</p>
+                <p class="bi bi-clock-fill">&nbsp;服務時間：周一至周五&nbsp;10:00~17:00</p>
+                <p class="bi bi-envelope-fill">&nbsp;信箱：succ@gma!l.com</p>
+                <p class="bi bi-telephone-fill">&nbsp;電話：04-8888-6666</p>
+                <p class="bi bi-signpost-2-fill">&nbsp;地址：台中市西曬區台灣小道切八段1號102樓</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p style="text-align: center;">LearnForFun Co.,Ltd.版權沒有@</p>
+    </div>
+</body>
+
+</html>

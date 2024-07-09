@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <title>多肉圖鑑</title>
+
+    <style>
+        body {
+            background-image: url(./image/background2-1.png);
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.363);
+            /* 示例：添加半透明背景 */
+        }
+
+        /*招牌*/
+        .myTitle {
+            color: rgb(8, 71, 8);
+            font-weight: bold;
+        }
+
+        /*指定看按鈕*/
+        .myColor {
+            background-color: #36cea0b2;
+            color: #000000;
+            border: none;
+            /* 去除按鈕的邊框 */
+            border-radius: 30px;
+            padding: 10px 15px;
+            /* 調整按鈕的內邊距 */
+            text-align: center;
+            /* 文字居中 */
+            text-decoration: none;
+            /* 去除超連結的下劃線 */
+            display: inline-block;
+            /* 讓按鈕以區塊元素顯示 */
+            margin: 5px;
+            /* 調整按鈕之間的間距 */
+            cursor: pointer;
+            /* 當鼠標懸停在按鈕上時顯示手型指示 */
+            transition: background-color 0.2s ease;
+            /* 平滑過渡效果 */
+            margin: 8px 10px 8px 10px;
+
+        }
+
+        .myColor:hover {
+            background-color: #2664eb94;
+            color: #FFFFFF;
+        }
+
+        /*文字 陸續新增中*/
+        .choose a {
+            color: rgb(130, 129, 150);
+            /* 連結的初始顏色 */
+            text-decoration: none;
+            /* 移除連結下劃線 */
+            transition: color 0.3s;
+            /* 添加顏色變化的過渡效果 */
+            font-weight: bold;
+        }
+
+        .choose a:hover {
+            color: rgba(64, 51, 233, 0.76);
+            /* 滑鼠懸停時的顏色 */
+        }
+
+        /*大標*/
+        .myType {
+            font-size: 32px;
+            margin-bottom: 15px;
+            padding: 6px;
+            padding-left: 20px;
+            font-weight: bolder;
+            background-color: rgb(90, 85, 165);
+            color: rgb(169, 210, 238);
+            border-radius: 20px;
+        }
+
+        /*About多肉*/
+        .toggle {
+            cursor: pointer;
+            color: rgba(246, 248, 245, 0.699);
+            background-color: rgb(136, 129, 230);
+            /* text-decoration: underline; */
+            padding: 5px;
+            padding-left: 20px;
+            border-radius: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /*被收合的內容*/
+        .myItrData {
+            margin-bottom: 10px;
+            list-style-type: circle;
+            background-color: rgba(217, 223, 194, 0.801);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /*收合功能*/
+        .hidden {
+            display: none;
+        }
+
+        /*重點整理標題*/
+        .myItrTitle {
+            font-size: 30px;
+            margin-top: 10px;
+            font-weight: bold;
+            padding-left: 20px;
+        }
+
+
+        /*  回到首頁按鈕 固定在頁面 */
+
+        .floating-button2 {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            /* 确保在其他内容之上*/
+        }
+
+        /*top按鈕*/
+        .floating-button2 button {
+            padding: 10px 20px;
+            font-weight: bold;
+            background-color: #3a9971b7;
+            color: #063506;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            /* 阴影效果 */
+            border-radius: 20px;
+            /* 添加平滑过渡效果 */
+        }
+
+        /* 按钮向上漂浮一点 */
+        .floating-button2 button:hover {
+            transform: translateY(-10px);
+        }
+
+        /* 快速跳轉# */
+        .choose {
+
+            font-size: 25px;
+            background-color: rgba(209, 226, 149, 0.637);
+            padding: 10px 10px;
+
+        }
+
+
+        /*介紹照片*/
+        .myPic {
+            display: block;
+            /* 讓圖片成為塊級元素 */
+            margin: 0 auto;
+            /* 將左右邊距設置為auto，自動居中 */
+            width: 300px;
+            height: auto;
+            padding-bottom: 10px;
+        }
+
+
+        /*固定列*/
+        .rounded-btn {
+            border-radius: 10px;
+            /* 设置圆角的半径，根据需要调整 */
+            border: none;
+            font-weight: bold;
+            font-size: x-large;
+        }
+
+        /*最下方資訊欄位*/
+        .box {
+            display: flex;
+            height: 200px;
+            padding: 5px 15px;
+            background-color: #b6f0c97c;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div style="display: flex">
+            <!-- 招牌 -->
+            <div>
+                <pre>    </pre>
+                <h1 class="myTitle">多肉植物相談所</h1>
+                <h1 style="color: rgba(55, 95, 65, 0.719)">succulent plants</h1>
+            </div>
+            <!--succulent plants 多肉植物圖片1-->
+            <img src="./image/imag_succ_招牌照.jpg" style="width: 200px;height: 200px; display: block;margin-left:2px" />
+        </div>
+
+        <br>
+        <div class="d-flex sticky-top" style="height: 50px;font-size: larger;">
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page1_takeCareSuc.html';">多肉養護</button>
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(230, 199, 61, 0.719);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/front%20page_succulent.html';">回到首頁</button>
+
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page3_store.html';">購買多肉</button>
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page5_connection.html'">留言板</button>
+
+        </div>
+        <!--回到首頁按鈕 固定在頁面-->
+        <!-- <div class="floating-button">
+        <a href="http://127.0.0.1:5501/Wen_test/front%20page_succulent.html"><button>回到首頁</button></a>
+    </div> -->
+        <br><br><br><br>
+
+        <h1
+            style="color: rgba(131, 10, 179, 0.548); background-color: rgba(255, 200, 128, 0.795); font-size: 48px;font-weight: bold;">
+            多肉圖鑑</h1>
+        <br>
+        <hr>
+
+        <div class="choose">
+            <h3 style="font-weight: bold;">我想認識：</h3>
+            <a href="#suc1"><button class="myColor">虹之玉</button></a>
+            <a href="#suc2"><button class="myColor">桃之卵</button></a>
+            <a href="#suc3"><button class="myColor">玉&nbsp;&nbsp;&nbsp;露</button></a>
+            <a href="#suc4"><button class="myColor">大雪蓮</button></a>
+            <a href="#suc5"><button class="myColor">黃&nbsp;&nbsp;&nbsp;麗</button></a>
+            <a href="#suc6"><button class="myColor">熊童子</button></a>
+            </button>
+            <a href=""><button class="myColor" style="background-color: gray;">建置中</button></a>
+            <a href=""><button class="myColor" style="background-color: gray;">敬請期待</button></a>
+            <a href=""><button class="myColor" style="background-color: gray;">٩(๑•̀ω•́๑)۶</button></a>
+            </button>
+            <a href="" style="display: flex">陸續新增中，敬請期待 ٩(๑•̀ω•́๑)۶</a>
+        </div>
+        <hr>
+
+        <!--多肉品種介紹-->
+
+        <div class="container" id="interduce">
+            <!--虹之玉-->
+            <div>
+                <h1 class="myType" id="suc1">虹之玉</h1>
+                <h4 style="background-color: #ffe4c4e7;padding: 15px;"> 虹之玉（學名：Sedum x rubrotinctum
+                    Clausen）是景天科景天屬的多肉植物，原生於墨西哥。它是一種多年生肉質草本植物，因其美麗的外觀和易於繁殖而受到廣泛喜愛。</h4>
+
+                <div>
+                    <h2 class="toggle">About 虹之玉<span class="toggleSymbol">+</span></h2>
+
+                    <ul class="myItrData hidden ">
+                        <h3 class="myItrTitle">外觀特徵</h3>
+                        <li>葉片肉質，呈長橢圓形，約1厘米長，通常互生排列。</li>
+                        <li>在充足陽光的環境下，葉片會逐漸轉紅，形成紅綠相間的迷人色彩。</li>
+                        <li>花朵為黃色星形，主要在秋冬季節或強光照射下開放，此時葉片部分或全部可能轉為鮮紅色。</li>
+                        <br>
+                        <h3 class="myItrTitle">生長環境</h3>
+                        <li>喜歡溫暖、光照充足的環境，生長適溫為10~28℃。</li>
+                        <li>夏季應避免長時間暴曬，可移至散光處以防止葉片過度曬傷。</li>
+                        <li>耐旱性強，春、秋季節生長期每週澆水一次即可，夏季高溫時減少澆水，宜多噴水霧以增加空氣濕度。</li>
+                        <li>冬季需控制澆水量，避免過濕。</li>
+                        <br>
+                        <h3 class="myItrTitle">栽培技巧</h3>
+                        <li>虹之玉容易群生，適合盆栽或組合盆景使用。</li>
+                        <li>繁殖主要以葉片插芽方式進行，繁殖速度快，成活率高。</li>
+
+                    </ul><br>
+
+                    <img src="./image/imag_succ (2).jpg" class="myPic">
+                    <hr>
+                </div>
+                <br>
+                <!--桃之卵-->
+                <h1 class="myType" id="suc2">桃之卵</h1>
+                <h4 style="background-color: #ffe4c4e7;padding: 15px;"> 桃之卵（學名：Echeveria 'Topsy
+                    Turvy'）是景天科的一種多肉植物，以其特殊的葉片形狀和美麗的外觀而受到人們喜愛。以下是桃之卵的一些主要特徵和栽培注意事項：</h4>
+
+                <div>
+
+                    <h2 class="toggle">About 桃之卵<span class="toggleSymbol">+</span></h2>
+                    <ul class="myItrData hidden">
+                        <h3 class="myItrTitle">外觀特徵</h3>
+                        <li>桃之卵的葉片呈卵形，但與一般的多肉植物不同，其葉片邊緣向上捲曲，呈現出獨特的反捲狀態，有時會呈現深紫色的邊緣。</li>
+                        <li>葉片表面光滑，質感肉厚，呈灰綠色或藍綠色，較少見的品種可能會有淡紅色的葉片。</li>
+                        <br>
+                        <h3 class="myItrTitle">生長環境</h3>
+                        <li>桃之卵喜歡溫暖、乾燥且充足的陽光環境。適宜的生長溫度為攝氏15至25度。</li>
+                        <li>在生長季節，可以放置在充足陽光下，如室外陽台或窗戶邊。</li>
+                        <li>冬季需保持較低的溫度，避免過度澆水，防止根部腐爛。
+                        </li>
+                        <li>如果長時間缺乏陽光，葉片可能會變得扁平，失去其獨特的捲曲形狀，因此需要定期移動位置以確保光照均勻。</li>
+                        <br>
+                        <h3 class="myItrTitle">栽培技巧</h3>
+                        <li>為了促進健康生長，建議使用排水良好的多肉植物專用土壤，或者自行配製沙質和礫石的混合土壤。</li>
+                        <li>澆水要適度，以保持土壤微濕即可，避免積水和過濕，特別是在冬季。</li>
+                        <li>桃之卵屬於緩慢生長的多肉植物，不需要頻繁施肥，每隔兩個月施一次多肉植物專用肥料即可。</li>
+                    </ul><br>
+                    <img src="./image/imag_succ (3).jpg" class="myPic">
+                </div>
+                <br>
+                <hr>
+                <!--玉露-->
+                <h1 class="myType" id="suc3">玉露</h1>
+                <h4 style="background-color: #ffe4c4e7;padding: 15px;"> 玉露（學名：Crassula
+                    ovata），又稱為翡翠植物或者金錢樹，是一種常見且受歡迎的多肉植物，特别是在室内養護方面。以下是玉露的介绍：</h4>
+
+                <div>
+                    <h2 class="toggle">About 玉露<span class="toggleSymbol">+</span></h2>
+                    <ul class="myItrData hidden">
+                        <h3 class="myItrTitle">外觀特徵</h3>
+                        <li>葉片特徵：玉露的葉片呈橢圓形或卵形，肉質厚實，通常呈現鮮綠色，有時帶有淡黃或紅色的邊緣。</li>
+                        <li>植株形態：通常生長為小型灌木狀，枝條粗壯，有時會逐漸變粗成為樹幹狀。</li>
+                        <br>
+                        <h3 class="myItrTitle">生長環境</h3>
+                        <li>光照需求：喜歡充足的陽光，但也能適應較弱的光線環境。在室內，可以選擇放置在明亮的窗台上。</li>
+                        <li>溫度要求：喜歡溫暖環境，理想生長溫度為攝氏15-24度。</li>
+                        <li>水分管理：耐旱，喜歡乾燥的環境，避免過多的澆水。春夏季節生長期間保持土壤微濕即可，冬季可減少澆水頻率。</li>
+                        <br>
+                        <h3 class="myItrTitle">栽培技巧</h3>
+                        <li>土壤選擇：使用排水良好的多肉植物專用土壤，或自製沙質土壤與少量腐葉土的混合物。</li>
+                        <li>施肥：春夏季節每月施一次稀釋的多肉植物專用肥料，秋冬季節減少或停止施肥。</li>
+                        <li>修剪與整形：可以根據需要修剪，促進植株形態的整齊。</li>
+                    </ul><br>
+                    <img src="./image/imag_succ (4).jpg" class="myPic">
+                </div>
+                <br>
+                <hr>
+                <!--大雪蓮-->
+                <h1 class="myType" id="suc4">大雪蓮</h1>
+                <h4 style="background-color: #ffe4c4e7;padding: 15px;">大雪蓮（學名：Sedum
+                    spectabile），又名秋英或秋英多肉，是景天科大雪蓮屬植物的一種，身上會鋪上一層厚厚的白粉，以下是大雪蓮的介紹：</h4>
+                <div>
+                    <h2 class="toggle">About 大雪蓮<span class="toggleSymbol">+</span></h2>
+                    <ul class="myItrData hidden">
+                        <h3 class="myItrTitle">外觀特徵</h3>
+                        <li>植株形態：大雪蓮是多年生草本植物，株高約30至60厘米，植株呈現直立或稍彎曲的姿態。</li>
+                        <li>葉片：葉片肉質，呈卵形或橢圓形，對生或互生排列，通常呈青綠色。</li>
+                        <li>花朵：花朵呈圓錐狀花序，花瓣五瓣，色彩豐富，主要有粉紅、白色或紅色等不同變種。</li>
+                        <br>
+                        <h3 class="myItrTitle">生長環境</h3>
+                        <li>光照需求：喜歡充足的陽光，生長最佳的環境是全日照或半日照，適合種植在陽光充足的地方。</li>
+                        <li>耐寒性：耐寒，適應性強，可以耐受寒冷的冬季天氣，不過極端寒冷的地區可能需要適當的保護。，葉片在冬季可能會因為低溫而轉紅或變色，增添花圃的冬季景觀。</li>
+                        <li>土壤要求：喜歡排水良好的土壤，可以在沙質或砂質壤土中良好生長，避免積水。 </li>
+                        <br>
+                        <h3 class="myItrTitle">栽培技巧</h3>
+                        <li>澆水管理：生長期間保持土壤微濕，但不要過濕，特別是在冬季要減少澆水頻率。</li>
+                        <li>施肥：生長期間每隔一個月施一次磷鉀肥料，有助於促進花芽的形成和生長。</li>
+                        <li>繁殖方法：大雪蓮可以通過分株、扦插或種子繁殖，分株是最常見和快速的繁殖方式。</li>
+                    </ul><br>
+                    <img src="./image/imag_succ (5).jpg" class="myPic">
+                </div>
+                <br>
+                <hr>
+                <!--黃麗的介紹-->
+                <h1 class="myType" id="suc5">黃麗</h1>
+                <h4 style="background-color: #ffe4c4e7;padding: 15px;">
+                    黃麗（學名：Echeveria 'Huang Lih'）是一種多肉植物，屬於景天科（Crassulaceae）的一員。以下是關於黃麗的介紹：</h4>
+                <div>
+                    <h2 class="toggle">About 黃麗<span class="toggleSymbol">+</span></h2>
+                    <ul class="myItrData hidden">
+                        <h3 class="myItrTitle">外觀特徵</h3>
+                        <li>黃麗擁有厚實多汁的葉片，典型景天科植物的特徵。葉片呈美麗的綠色，有時帶有些許紅色或粉紅色的邊緣，因此深受多肉植物愛好者喜愛。</li>
+                        <br>
+                        <h3 class="myItrTitle">生長環境</h3>
+                        <li>黃麗耐干旱，適合生長在陽光充足、通風良好的環境中。它們喜歡乾燥的生長環境，因此需注意避免過度澆水，以免導致根部腐爛。</li>
+                        <br>
+                        <h3 class="myItrTitle">栽培技巧</h3>
+                        <li>黃麗可透過葉片扦插或分株繁殖。扦插時，將健康的葉片摘下，放置在乾燥通風良好的環境中，等待新根生長。分株則是將成長在一起的多肉植物分開，每個分株都具有獨立的生長能力。</li>
+                        <li>養護上，定期施肥可保持其健康生長，適當的陽光照射和適度的水分管理是保持健康的關鍵。</li>
+                    </ul><br>
+                </div>
+                <img src="./image/imag_succ (6).jpg" class="myPic">
+                <br>
+                <hr>
+                <!--熊童子-->
+                <h1 class="myType" id="suc6">熊童子</h1>
+                <h4 style="background-color: #ffe4c4e7;padding: 15px;">熊童子（學名：Kalanchoe
+                    tomentosa），俗稱熊爪或熊童子，是一種景天科多肉植物，原產於馬達加斯加。這種植物以其獨特的外觀和容易栽培而廣受喜愛。以下是熊童子的詳細介紹：</h4>
+                <div>
+                    <h2 class="toggle">About 熊童子<span class="toggleSymbol">+</span></h2>
+                    <ul class="myItrData hidden">
+                        <h3 class="myItrTitle">外觀特徵</h3>
+                        <li>葉片特徵：熊童子的葉片厚實，呈卵形或倒卵形，邊緣有鋸齒狀突起，整體呈現灰綠色或灰白色，表面覆蓋著細小的白色絨毛，這些絨毛使得葉片觸感柔軟。</li>
+                        <li>生長形態：熊童子通常生長為小型灌木狀，高度約15至30厘米，枝幹直立或稍微弓曲，支持著密集的葉片。</li>
+
+                        <br>
+                        <h3 class="myItrTitle">生長環境</h3>
+                        <li>光照需求：喜歡充足的明亮光線，適合種植在室內明亮的位置，如窗邊或陽台。</li>
+                        <li>溫度要求：熊童子對溫度要求不苛刻，適應性強，理想生長溫度在攝氏15至25度之間。</li>
+                        <li>澆水管理：耐旱，植株在生長期間保持土壤微濕即可，冬季減少澆水頻率以防止過濕。 </li>
+                        <br>
+                        <h3 class="myItrTitle">栽培技巧</h3>
+                        <li>土壤選擇：使用排水良好的多肉植物專用土壤或沙質壤土混合物，以確保良好的通氣性和排水性。</li>
+                        <li>施肥：春夏季節每隔兩個月施一次稀釋的多肉植物專用肥料，有助於促進植株生長和健康。</li>
+                        <li>繁殖方法：熊童子可以通過葉片插芽或枝條扦插繁殖，方法簡單且成功率高。</li>
+                    </ul><br>
+                </div>
+                <img src="./image/imag_succ (8).jpg" class="myPic">
+                <br>
+
+                <div class="floating-button2">
+                    <a href="#"><button>Top↑</button></a>
+                </div>
+                <!--收合介紹-->
+                <script>
+                    // JavaScript 代碼，實現點擊展開和收起功能
+                    document.querySelectorAll('.toggle').forEach(item => {
+                        item.addEventListener('click', () => {
+                            const content = item.nextElementSibling;
+                            const symbol = item.querySelector('.toggleSymbol');
+                            if (content.classList.contains('hidden')) {
+                                content.classList.remove('hidden');
+                                symbol.textContent = '-';
+                            } else {
+                                content.classList.add('hidden');
+                                symbol.textContent = '+';
+                            }
+                        });
+                    });
+                </script>
+                <br><br><br>
+                </dl>
+            </div>
+        </div>
+        <div class="box">
+            <div>
+                <p>客服資訊</p>
+                <p class="bi bi-clock-fill">&nbsp;服務時間：周一至周五&nbsp;10:00~17:00</p>
+                <p class="bi bi-envelope-fill">&nbsp;信箱：succ@gma!l.com</p>
+                <p class="bi bi-telephone-fill">&nbsp;電話：04-8888-6666</p>
+                <p class="bi bi-signpost-2-fill">&nbsp;地址：台中市西曬區台灣小道切八段1號102樓</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p style="text-align: center;">LearnForFun Co.,Ltd.版權沒有@</p>
+    </div>
+
+</body>
+
+</html>

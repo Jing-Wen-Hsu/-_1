@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- BS ICONS https://icons.getbootstrap.com/icons/chat-right-dots-fill/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            background-image: url(./image/background2-1.png);
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.363);
+            /* 示例：添加半透明背景 */
+        }
+
+        /*招牌*/
+        .myTitle {
+            color: rgb(8, 71, 8);
+            font-weight: bold;
+        }
+
+        /* 表格樣式 .menu */
+
+        .menu {
+            width: 95%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: rgba(235, 214, 123, 0.521);
+        }
+
+        .menu th,
+        .menu td {
+            border: 2px solid #b1a7a7;
+            padding: 16px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        .menu th {
+            background-color: #b5cab7;
+            font-size: 24px;
+        }
+
+        .menu img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 50px;
+        }
+
+        .bi-cart {
+            font-size: 24px;
+            /* icon及文字大小 */
+            float: right;
+            /* 置於右侧 */
+            margin-right: 20px;
+            /* 增加右邊間距 */
+        }
+
+        /* button2-Top */
+        .floating-button2 {
+            position: fixed;
+            bottom: 150px;
+            /* 距離底部的距離 */
+            left: 15px;
+            /* 距離右側的距離 */
+
+        }
+
+        .floating-button2 button {
+            padding: 10px 20px;
+            background-color: #cee9377c;
+            /* 按钮背景色 */
+            color: #df1b01;
+            /* 文字颜色 */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* 阴影效果 */
+            transition: transform 0.2s ease-in-out;
+            /* 添加平滑过渡效果 */
+        }
+
+        .floating-button2 button:hover {
+            transform: translateY(-5px);
+            /* 按钮向上漂浮一点 */
+        }
+
+
+        /*固定列*/
+        .rounded-btn {
+            border-radius: 10px;
+            /* 设置圆角的半径，根据需要调整 */
+            border: none;
+            font-weight: bold;
+            font-size: x-large;
+        }
+
+        /* button2 TOP */
+
+        .floating-button2 button {
+            padding: 10px 20px;
+            background-color: #3a9971b7;
+            color: #063506;
+            right: 2%;
+            bottom: 5%;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            outline: none;
+            position: fixed;
+            z-index: 1000;
+            /* 确保在其他内容之上 */
+        }
+
+        .floating-button2 button:hover {
+            transform: translateY(-15px);
+            /* 按钮向上漂浮一点 */
+        }
+
+        .cartBtn {
+            background-color: rgba(255, 182, 193, 0.747);
+        }
+
+        /*最下方資訊欄位*/
+        .box {
+            display: flex;
+            height: 200px;
+            padding: 5px 15px;
+            background-color: #b6f0c97c;
+        }
+    </style>
+
+    <title>多肉商店</title>
+</head>
+
+<body>
+    <div class="container">
+        <div style="display: flex">
+
+            <!-- 招牌 -->
+            <div>
+                <pre>    </pre>
+                <h1 class="myTitle">多肉植物相談所</h1>
+                <h1 style="color: rgba(55, 95, 65, 0.719)">succulent plants</h1>
+            </div>
+            <!--succulent plants 多肉植物圖片1-->
+            <img src="./image/imag_succ_招牌照.jpg" style="width: 200px;height: 200px; display: block" />
+        </div>
+        <br>
+        <div class="d-flex sticky-top" style="height: 50px;font-size: larger;">
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page1_takeCareSuc.html';">多肉養護</button>
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page2_sucInterduction.html';">多肉圖鑑</button>
+
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(230, 199, 61, 0.719);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/front%20page_succulent.html'">回到首頁</button>
+
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page5_connection.html'">留言板</button>
+        </div>
+        <br><br>
+        <b
+            style="font-size: 28px;color: rgba(204, 59, 83, 0.904);background-color: rgba(245, 244, 245, 0.966);">來挑選心儀的多肉吧(｡•ㅅ•｡)♡</b><br><br>
+        <table class="menu">
+            <tr>
+                <th>商品圖片</th>
+                <th>多肉名稱</th>
+                <th>售價</th>
+                <th>購買数量</th>
+                <th>加入購物車</th>
+            </tr>
+            <tr>
+                <td><img src="./image/imag_succ (2).jpg" alt="Product 1"></td>
+                <td>虹之玉</td>
+
+                <td>50元</td>
+                <td>
+                    <select name="quantity1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+                <td><button class="btn cartBtn">加入購物車</button></td>
+            </tr>
+            <tr>
+                <td><img src="./image/imag_succ (3).jpg" alt="Product 2"></td>
+                <td>桃之卵</td>
+                <td>200元</td>
+                <td>
+                    <select name="quantity2">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+                <td><button class="btn cartBtn">加入購物車</button></td>
+            </tr>
+            <tr>
+                <td><img src="./image/imag_succ (4).jpg" alt="Product 3"></td>
+                <td>玉露</td>
+                <td>50元</td>
+                <td>
+                    <select name="quantity1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+                <td><button class="btn cartBtn">加入購物車</button></td>
+            </tr>
+            <tr>
+                <td><img src="./image/imag_succ (5).jpg" alt="Product 5"></td>
+                <td>大雪蓮</td>
+                <td>100元</td>
+                <td>
+                    <select name="quantity1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+                <td><button class="btn cartBtn">加入購物車</button></td>
+            </tr>
+
+            <tr>
+                <td><img src="./image/imag_succ (6).jpg" alt="Product 5"></td>
+                <td>黃麗</td>
+                <td>50元</td>
+                <td>
+                    <select name="quantity1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+                <td><button class="btn cartBtn">加入購物車</button></td>
+            </tr>
+
+            <tr>
+                <td><img src="./image/imag_succ (8).jpg" alt="Product 5"></td>
+                <td>熊童子(熊爪)</td>
+                <td>200元</td>
+                <td>
+                    <select name="quantity1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+                <td><button class="btn cartBtn">加入購物車</button></td>
+            </tr>
+
+        </table>
+        <!--進入購物車-->
+        <b class="bi bi-cart" id="cart">&nbsp;查看購物車</b>
+        <br><br><br><br><br><br>
+        <div class="box">
+            <div>
+                <p>客服資訊</p>
+                <p class="bi bi-clock-fill">&nbsp;服務時間：周一至周五&nbsp;10:00~17:00</p>
+                <p class="bi bi-envelope-fill">&nbsp;信箱：succ@gma!l.com</p>
+                <p class="bi bi-telephone-fill">&nbsp;電話：04-8888-6666</p>
+                <p class="bi bi-signpost-2-fill">&nbsp;地址：台中市西曬區台灣小道切八段1號102樓</p>
+            </div>
+        </div>
+        <div class="floating-button2">
+            <a href="#"><button style="font-weight: bolder;">Top↑</button></a>
+        </div>
+
+
+    </div>
+    <div>
+        <p style="text-align: center;">LearnForFun Co.,Ltd.版權沒有@</p>
+    </div>
+
+    <!-- step4. 調整字型顏色: #AC915D、white -->
+    <!-- step5. 欄位高度、欄位寬度：height: 30px (角色名)、width: 200px (說明欄) -->
+    <!-- step6. 加入網頁背景底圖：background-image: url("img/backimg.jpg") -->
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</html>

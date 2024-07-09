@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <title>多肉養護</title>
+
+    <style>
+        .myTitle {
+            background-color: #CEFCAA;
+            font-size: xx-large;
+        }
+
+        .myData {
+            background-color: #E5F8B3;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 50px;
+            /* 距离底部的距离 */
+            right: 50px;
+            /* 距离右侧的距离 */
+            z-index: 1000;
+            /* 确保在其他内容之上 */
+        }
+
+        .floating-button button {
+            padding: 10px 20px;
+            background-color: #bbfa29b7;
+            /* 按钮背景色 */
+            color: #043104;
+            /* 文字颜色 */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* 阴影效果 */
+            transition: transform 0.2s ease-in-out;
+            /* 添加平滑过渡效果 */
+        }
+
+        .floating-button button:hover {
+            transform: translateY(-10px);
+            /* 按钮向上漂浮一点 */
+        }
+
+        body {
+            background-image: url(../Wen_test/image/plant-background.jpg);
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-position: right top;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!--     
+    待放上固定欄位
+回到首頁按鈕 固定在頁面-->
+    <!-- <div  class="floating-button">
+    <a href="http://127.0.0.1:5501/Wen_test/front%20page_succulent.html"><button>回到首頁</button></a></div>
+
+    <br><br>
+
+    <div class="container" id="interduce">
+        <dl>
+            <dt class=myTitle>多肉養護</dt>
+            <p>多肉怎麼養?陽光、空氣、水</p>
+            <br>
+            <dt class=myTitle> 照顧方法介紹 - 悶養</dt>
+            <dd class="myData p-2 m-2">
+                <p style="font-size: larger;">悶養是什麼?</p>
+
+                悶養是指在植株澆水後，用專用的悶養蓋或是用任何透明的罩子將植株整盆罩住，留下少量的透氣孔，並在加蓋前噴灑部分水分在蓋子上，讓罩子內的空氣濕度提高到接近100%，空氣濕度的提高能讓植物減緩水分從蒸散作用中散失。
+                <br>
+
+
+                悶養對多肉好嗎？ <br>
+                什麼樣的多肉適合悶養?<br>
+                這個問題對於老闆來說其實不是那麼好回答，老闆希望你們能種出更美的植株，而且悶養確實能讓植物在短時間變成好看的狀態。
+                <br><br>
+                以玉露為例，玉露經過悶養提高空氣濕度，讓玉露的窗邊的更透更亮，不過悶養還是有可能引發許多潛在的問題！接下來我們一一列出可能會發生的狀況
+
+            </dd>
+            <img src="" alt="玉露的圖片"> <br><br><br>
+
+            <dt class="myTitle">悶養會有什麼隱藏的風險呢？</dt>
+            <dd class="myData m-2 p-2">
+                <p style="font-size: larger;">染菌</p>
+                高濕度會讓大部分的細菌有更高的活力與繁殖力，再加上悶養時會讓通風度降低，容易發生染菌的問題。
+            </dd>
+            <br>
+
+
+            <dd class="myData m-2 p-2">
+                <p style="font-size: larger;">徒長</p>
+                植株的徒長除了和陽光有關外，也和環境通風度與濕度有關，高濕度環境如果沒有搭配較高強度的陽光，就容易發生徒長，更不用說悶養時的空氣濕度接近100%了。
+            </dd>
+            <img src="" alt="正常的多肉">
+            <img src="" alt="徒長的多肉">
+            <br>
+            <br>
+
+            <p style="background-color: #24440b; color: aliceblue; padding: -2px;">真的想悶，那又該怎麼悶呢？<br>
+                "我真的很想悶養怎麼辦，我就是想看到通透到不行的狀態。"
+                那讓我們來看看怎麼做可以降低風險。<br>
+
+                以玉露為例：
+                首先老闆會建議你先觀察植物狀態。穩根健康的植物，給水頻率正常，葉片應該有一定的飽滿度，這時加上悶蓋3-5天左右的時間，對大部分的玉露來說是沒問題的。<br>
+
+                適合悶養的植物狀態<br>
+                根系穩健，植物狀態良好<br>
+                剛剛經歷輕微過曬，但根系狀態良好(傳言常說這個狀態悶過會非常漂亮，推薦給進階挑戰的玩家)
+                很不適合悶養的植物狀態:<br>
+                △植物有葉傷尚未痊癒<br>
+                △發生徒長不久/徒長太過嚴重的植物<br>
+                △植物狀態乾扁太久<br>
+                △夏天的任何狀態<br></p>
+            <br><br><br>
+        </dl> -->
+
+
+
+
+
+
+</body>
+
+</html>

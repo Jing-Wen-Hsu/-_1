@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <title>多肉養護</title>
+
+    <style>
+        body {
+            background-image: url(./image/background2-1.png);
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.363);
+            /* 示例：添加半透明背景 */
+        }
+
+        /*招牌*/
+        .myTitle {
+            color: rgb(8, 71, 8);
+            font-weight: bold;
+        }
+
+        .description {
+            background-color: #D0FAD0;
+            font-size: large;
+            font-weight: bold;
+            padding: 20px 25px;
+            margin: 15px;
+            border: 3px dashed #05703a91;
+            border-radius: 30px;
+        }
+
+
+        .myP1Title {
+            background-color: #5899665e;
+            font-size: xx-large;
+            color: #114411;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .myP1Data {
+            background-color: #a9dba952;
+            color: #043822;
+            border: 3px dashed #376837;
+            font-size: large;
+            font-weight: bold;
+            margin: 15px;
+            padding: 20px 25px;
+            border-radius: 20px;
+        }
+
+
+
+        /* button2-TOP */
+        .floating-button2 {
+            position: fixed;
+            bottom: 5%;
+            /* 距离底部的距离 */
+            right: 2%;
+            /* 距离右侧的距离 */
+            z-index: 1000;
+            /* 确保在其他内容之上 */
+
+
+        }
+
+        .floating-button2 button {
+            padding: 10px 20px;
+            background-color: #3a9971b7;
+            color: #063506;
+            left: 10px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.1s ease-in-out;
+            /* 添加平滑过渡效果 */
+        }
+
+        .floating-button2 button:hover {
+            transform: translateY(-10px);
+            /* 按钮向上漂浮一点 */
+        }
+
+
+        /*悶養介紹*/
+
+        .rounded-btn {
+            border-radius: 10px;
+            /* 设置圆角的半径，根据需要调整 */
+            border: none;
+        }
+
+        /*固定列*/
+        .rounded-btn {
+            border-radius: 10px;
+            /* 设置圆角的半径，根据需要调整 */
+            border: none;
+            font-weight: bold;
+            font-size: x-large;
+        }
+
+        /* 表格樣式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #b3a9a9f3;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #eec8c8e1;
+        }
+
+        td {
+            background-color: #c7b8b888;
+        }
+
+        img {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 100px;
+        }
+
+        /*最下方資訊欄位*/
+        .box {
+            display: flex;
+            height: 200px;
+            padding: 5px 15px;
+            background-color: #b6f0c97c;
+        }
+
+        /* 所有元素帶出框線以便檢視排版位置 */
+        /* * {
+            border: 1px solid #000;
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    <!-- 首頁最上方選單 -->
+    <div class="container">
+        <div style="display: flex">
+            <!-- 招牌 -->
+            <div>
+                <pre>    </pre>
+                <h1 class="myTitle">多肉植物相談所</h1>
+                <h1 style="color: rgba(55, 95, 65, 0.719)">succulent plants</h1>
+            </div>
+            <!--succulent plants 多肉植物圖片1-->
+            <img src="./image/imag_succ_招牌照.jpg" style="width: 200px;height: 200px; display: block;margin-left:2px" />
+        </div>
+
+        <br>
+
+        <div class="d-flex sticky-top  " style="height: 50px;font-size: larger;">
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(230, 199, 61, 0.719);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/front%20page_succulent.html';">回到首頁</button>
+
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page2_sucInterduction.html';">多肉圖鑑</button>
+
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page3_store.html';">購買多肉</button>
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
+                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page5_connection.html'">留言板</button>
+
+        </div>
+
+
+        <!--回到首頁按鈕 固定在頁面-->
+        <div>
+            <!-- <div class="floating-button">
+            <a href="http://127.0.0.1:5501/Wen_test/front%20page_succulent.html"><button
+                    style="font-weight: bolder;">回到首頁</button></a>
+        </div> -->
+
+            <div class="container" id="interduce">
+                <dl>
+                    <dt style="background-color: #238a09ad;
+                        font-size: xx-large;color: #f1e0a4;
+                        height: auto; 
+                        padding: 5px ;
+                        border-radius: 10px;">
+                        多肉養護
+                    </dt>
+
+                    <div style="display: inline-block;">
+                        <p class="description">
+                            多肉植物是一種特別適合初學者的植物，因為它們相對容易照料並能在室內或室外環境中生存。以下是一些多肉植物的基本養護方法：</p>
+                    </div>
+                    <br>
+                    <div>
+                        <dl>
+                            <dt class=myP1Title>1.適當的照明：</dt>
+                            <dd class="myP1Data">多肉植物喜歡明亮的光線，可以放在室內靠近窗戶的位置，或者在室外陰涼處。避免直接暴露在強烈陽光下，尤其是在夏季的炎熱時段。</dd>
+                        </dl>
+
+                        <dt class=myP1Title>2.適量的澆水：</dt>
+                        <dd class="myP1Data">通常情況下，多肉植物不需要太多水。每次澆水時讓土壤完全乾燥後再次澆水。冬季應該更少澆水，因為植物生長速度較慢。</dd>
+
+                        <dt class=myP1Title>3.良好的排水系統：</dt>
+                        <dd class="myP1Data">使用能夠排水的容器和土壤混合物，以防止多肉植物根部過度濕潤而腐爛。</dd>
+
+                        <dt class=myP1Title>4.適當的溫度：</dt>
+                        <dd class="myP1Data">多肉植物通常適應於溫暖的環境，但也能忍受較冷的溫度，只要不低於攝氏5度。在寒冷季節，應該避免暴露在極寒的環境中。</dd>
+
+                        <dt class=myP1Title>5.定期施肥：</dt>
+                        <dd class="myP1Data">在生長季節（春天到夏天）定期給予多肉植物適量的肥料，例如專用的多肉植物肥料或者稀釋過的普通室內植物肥料。冬季則不需要施肥。</dd>
+
+                        <dt class=myP1Title>6.定期檢查和維護：</dt>
+                        <dd class="myP1Data">檢查多肉植物是否有害蟲或病害的跡象，及時處理。定期檢查植物的健康狀況，必要時更換土壤或重新植入。</dd>
+
+                        <dt
+                            style="margin-left: 25px;margin-right: 25px;margin-top: 50px; font-size: x-large;border: solid #213d35 5px; padding: 25px;">
+                            <p style="font-size: larger;">總結來說，</p>
+                            <p>多肉植物的養護相對簡單，主要是確保它們獲得適當的光線、水分和溫度，並且適時進行基本的維護。通過這些基本的方法，可以确保您的多肉植物能夠健康茁壯地生長。</p>
+                        </dt>
+                    </div>
+
+                    <br><br><br>
+                    <hr>
+
+                    <br><br><br>
+                    <!--待調整-->
+                    <dt class=myP1Title> 照顧方法1 - 悶養</dt>
+                    <dd class="myP1Data">
+                        <p style="font-size: larger;">悶養是什麼?</p>
+
+                        悶養是指在植株澆水後，用專用的悶養蓋或是用任何透明的罩子將植株整盆罩住，留下少量的透氣孔，並在加蓋前噴灑部分水分在蓋子上，讓罩子內的空氣濕度提高到接近100%，空氣濕度的提高能讓植物減緩水分從蒸散作用中散失。
+                        <br><br>
+                        <hr>
+                        悶養對多肉好嗎？ <br>
+                        什麼樣的多肉適合悶養?<br><br>
+                        這個問題其實不是那麼好回答，需要評估種植環境、澆水頻率、多肉品種等等因素；適合悶養的多肉品種之一首推玉露，玉露經過悶養提高空氣濕度，可讓玉露的窗邊更透更亮，不過悶養還是有可能引發許多潛在的問題！<br><br>
+                        接下來我們一一列出可能會發生的狀況希望你們能種出更美的植株，而且悶養確實能讓植物在短時間變成好看的狀態。
+                    </dd>
+                    <table>
+                        <tr>
+                            <th colspan="2" style="font-size: large;">晶瑩剔透的玉露</th>
+
+                        </tr>
+                        <tr>
+                            <td colspan="2"><img src="./image/imag_succ (4).jpg"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">經過悶養的玉露，更加透亮、飽滿。</td>
+                        </tr>
+                    </table>
+
+                    <!-- <div style="display: inline-block;">
+                        <img src="../Wen_test/image/imag_succ (4).jpg">
+                    </div> -->
+                    <br><br>
+
+                    <dt class="myP1Title" style="color: rgba(204, 11, 11, 0.863);">悶養會有什麼隱藏的風險呢？</dt>
+
+                    <dd class="myP1Data">
+                        <p style="font-size: x-large;color: red;">染菌</p>
+                        高濕度會讓大部分的細菌有更高的活力與繁殖力，再加上悶養時會讓通風度降低，容易發生染菌的問題。
+                    </dd>
+                    <dd class="myP1Data">
+                        <p style="font-size: x-large;color: red;">徒長</p>
+                        植株的徒長除了和陽光有關外，也和環境通風度與濕度有關，高濕度環境如果沒有搭配較高強度的陽光，就容易發生徒長，更不用說悶養時的空氣濕度接近100%了。
+                    </dd>
+
+                    <table style="font-size: large;">
+
+                        <tr>
+                            <th>正常的姬朧月</th>
+                            <th>徒長的姬朧月</th>
+                        </tr>
+                        <tr>
+                            <td><img src="./image/未徒長.png"></td>
+                            <td><img src="./image/徒長.png"></td>
+                        </tr>
+                        <tr>
+                            <td>葉片緊密，呈現好看的花形。</td>
+                            <td>葉片間距拉大，像棵小樹。&nbsp;&nbsp;&nbsp;</td>
+                        </tr>
+
+                    </table>
+                    <br>
+
+
+                    <dd class="myP1Data m-2 p-2">
+                        <p style="font-size: larger;">什麼樣的多肉不適合悶養？</p>
+                        △植物有葉傷尚未痊癒<br>
+                        △發生徒長不久/徒長太過嚴重的植物<br>
+                        △植物狀態乾扁太久<br>
+                        △夏天的任何狀態
+                    </dd>
+                    <br>
+                    <br>
+
+                    <div class="floating-button2">
+                        <a href="#"><button style="font-weight: bolder;">Top↑</button></a>
+                    </div>
+
+                    <br><br><br>
+                </dl>
+            </div>
+            <div class="box">
+                <div>
+                    <p>客服資訊</p>
+                    <p class="bi bi-clock-fill">&nbsp;服務時間：周一至周五&nbsp;10:00~17:00</p>
+                    <p class="bi bi-envelope-fill">&nbsp;信箱：succ@gma!l.com</p>
+                    <p class="bi bi-telephone-fill">&nbsp;電話：04-8888-6666</p>
+                    <p class="bi bi-signpost-2-fill">&nbsp;地址：台中市西曬區台灣小道切八段1號102樓</p>
+                </div>
+
+            </div>
+
+        </div>
+        <div>
+            <p style="text-align: center;">LearnForFun Co.,Ltd.版權沒有@</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
