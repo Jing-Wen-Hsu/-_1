@@ -11,7 +11,9 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-    <title>留言板</title>
+    <!-- BS ICONS https://icons.getbootstrap.com/icons/chat-right-dots-fill/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>訪客留言板</title>
 
     <style>
         /*背景圖片*/
@@ -96,6 +98,32 @@
             display: flex;
         }
 
+        /* 登出按鈕 */
+
+        .logoutBtn {
+            padding: 10px 20px;
+            right: 0;
+            bottom: 80%;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            outline: none;
+            /* position: fixed; */
+        }
+
+        /* 登入按鈕  */
+
+        .logInBtn {
+            padding: 10px 20px;
+            top: 0%;
+            right: 0;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            outline: none;
+            /* position: fixed; */
+        }
+
         /* 文字 */
         .myText {
             color: #1d5a1c;
@@ -110,27 +138,40 @@
             padding: 5px 15px;
             background-color: #b6f0c97c;
         }
+
+        /* 登入按鈕  */
+        .logInBtn {
+            padding: 10px 20px;
+            top: 0%;
+            right: 0;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            outline: none;
+            position: fixed;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <!-- 首頁最上方選單 -->
+        <!-- 導覽列 -->
         <div style="display: flex">
 
-            <!-- 招牌 -->
+            <!-- 招牌文字 -->
             <div>
                 <pre>    </pre>
                 <h1 class="myTitle">多肉植物相談所</h1>
-                <h1 style="color: rgba(55, 95, 65, 0.719)">succulent plants</h1>
+                <h1 style="color: rgba(55, 95, 65, 0.719)">Succulent plants</h1>
             </div>
-            <!--succulent plants 多肉植物圖片1-->
+            <!--succulent plants 招牌圖片-->
             <img src="./image/imag_succ_招牌照.jpg" style="width: 200px;height: 200px; display: block" />
+
         </div>
+
         <br>
 
-
-
+        <!-- 導覽列 -->
         <div class="d-flex sticky-top" style="height: 50px;font-size: larger;">
             <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
                 onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page1_takeCareSuc.html';">多肉養護</button>
@@ -140,29 +181,29 @@
             <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
                 onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page3_store.html';">購買多肉</button>
 
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(230, 199, 61, 0.719);"
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(84, 187, 151, 0.938);"
                 onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/front%20page_succulent.html';">回到首頁</button>
         </div>
-
 
         <div>
             <br><br><br>
             <h3 class="myText" style="padding: 30px;">
                 歡迎來到多肉植物相談所(๑´ㅂ`๑)<br><br>
 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在這裡，您可以與我們分享您的經驗、提出問題，或是給我們的網站提供任何建議。<br>
-                我們非常期待聽到您的聲音，並願意為您提供解答。(^ω^)
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在這裡，您可以與我們分享您的經驗、提出問題，或是給我們的網站提供任何建議。<br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我們非常期待聽到您的聲音，並願意為您提供解答。(^ω^) <br>
 
-                請留下您的姓名、聯絡信箱和您想要討論的主題及內容，我們將盡快回覆您的留言。<br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;請留下您的姓名、聯絡信箱和您想要討論的主題及內容，我們將盡快回覆您的留言。<br><br>
 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您對於多肉植物的養護有任何疑問，或者對於特定品種的資訊感興趣，都歡迎在此與我們交流。
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您對於多肉植物的養護有任何疑問，或者對於特定品種的資訊感興趣，都歡迎在此與我們
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交流。
             </h3>
             <br>
         </div>
         <hr>
 
         <div class="contact-form">
-            <h2>留言板</h2>
+            <h2>訪客留言板</h2>
             <form action="#" method="post">
                 <label for="name">姓名:</label>
                 <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required>
@@ -185,6 +226,7 @@
                 <input type="submit" value="提交">
             </form>
         </div>
+
 
         <br>
         <hr>

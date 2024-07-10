@@ -125,6 +125,49 @@
       background-color: #b6f0c97c;
     }
 
+
+    /* 登出按鈕 */
+
+    .logoutBtn {
+      padding: 10px 20px;
+      right: 0;
+      bottom: 80%;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      outline: none;
+      /* position: fixed; */
+    }
+
+    /* 登入按鈕  */
+
+    .logInBtn {
+      padding: 10px 20px;
+      top: 0%;
+      right: 0;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      outline: none;
+      /* position: fixed; */
+    }
+
+    /* TopBtn */
+    .topBtn {
+      background-color: #3a9971b7;
+      color: #063506;
+      padding: 10px 20px;
+      bottom: 10%;
+      right: 0;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      outline: none;
+      position: fixed;
+    }
+
+
+
     /* 所有元素帶出框線以便檢視排版位置 */
     /* * {
       border: 1px solid #000;
@@ -143,10 +186,25 @@
       <div>
         <pre>    </pre>
         <h1 class="myTitle">多肉植物相談所</h1>
-        <h1 style="color: rgba(55, 95, 65, 0.719)">succulent plants</h1>
+        <h1 style="color: rgba(55, 95, 65, 0.719)">Succulent plants</h1>
       </div>
       <!--succulent plants 多肉植物圖片1-->
       <img src="./image/imag_succ_招牌照.jpg" style="width: 200px;height: 200px; display: block" />
+
+      <div class="d-flex" style="position: fixed;right: 0;">
+        <!-- 會員登入按鈕 -->
+        <div class="logInBtn">
+          <button onclick="showMessege()">會員登入</button>
+        </div>
+
+        <!-- 登出按鈕 -->
+        <div>
+          <div class="logoutBtn">
+            <button data-bs-toggle="modal" data-bs-target="#logOut">登出</button>
+          </div>
+        </div>
+      </div>
+
     </div>
     <br>
 
@@ -163,14 +221,14 @@
 
       <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
         onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page5_connection.html'">留言板</button>
-
     </div>
+
 
     <!-- 輪播圖 -->
     <hr />
     <div class="container">
       <div class="container w-80">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
               aria-current="true" aria-label="Slide 1"></button>
@@ -263,26 +321,165 @@
 
       <!-- <p><a href="#introduce">回到多肉植物介紹</a><br /></p> -->
 
-      <a href="#"><button style="background-color: rgba(94, 179, 122, 0.562);margin-left: 90%;">回到頂端</button></a>
+      <a href="#"><button class="topBtn">Top↑</button></a>
 
-      <!-- 版權、資訊框 -->
 
-      <div class="box">
-        <div>
-          <p>客服資訊</p>
-          <p class="bi bi-clock-fill">&nbsp;服務時間：周一至周五&nbsp;10:00~17:00</p>
-          <p class="bi bi-envelope-fill">&nbsp;電子信箱：succ@gma!l.com</p>
-          <p class="bi bi-telephone-fill">&nbsp;聯絡電話：04-8888-6666</p>
-          <p class="bi bi-signpost-2-fill">&nbsp;聯絡地址：台中市西曬區台灣小道切八段1號102樓</p>
+      <div class="modal " tabindex="-1" id="logOut" data-bs-backdrop="static">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">提示訊息</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>是否確認登出?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">再逛一下</button>
+              <div></div>
+              <button type="button" class="btn btn-primary" id="pageLogout" data-bs-dismiss="modal">確認登出</button>
+            </div>
+          </div>
         </div>
       </div>
+      <div>
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
 
+          <div class=" toast bg-warning" id="cancelLogout">
+            <div class="toast-header">
+              <span class="me-auto">提示</span>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">登出成功</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal " tabindex="-1" id="logOut" data-bs-backdrop="static">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">提示訊息</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>是否確認登出?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">再逛一下</button>
+            <div></div>
+            <button type="button" class="btn btn-primary" id="pageLogout" data-bs-dismiss="modal">確認登出</button>
+          </div>
+        </div>
+      </div>
     </div>
     <div>
-      <p style="text-align: center;">LearnForFun Co.,Ltd.版權沒有@</p>
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div class=" toast bg-warning" id="cancelLogout">
+          <div class="toast-header">
+            <span class="me-auto">提示</span>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">登出成功</div>
+        </div>
+      </div>
     </div>
+
+
+    <!-- 登入登出按鈕 -->
+    <div class="modal " tabindex="-1" id="logOut" data-bs-backdrop="static">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">提示訊息</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>是否確認登出?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">再逛一下</button>
+            <div></div>
+            <button type="button" class="btn btn-primary" id="pageLogout" data-bs-dismiss="modal">確認登出</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div class=" toast bg-warning" id="cancelLogout">
+          <div class="toast-header">
+            <span class="me-auto">提示</span>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">登出成功</div>
+        </div>
+      </div>
+    </div>
+
+<hr>
+    <!-- 版權、資訊框 -->
+
+    <div class="box">
+      <div>
+        <b style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;客服資訊</b>
+        <p class="bi bi-clock-fill">&nbsp;服務時間：周一至周五&nbsp;10:00~17:00</p>
+        <p class="bi bi-envelope-fill">&nbsp;電子信箱：succ@gma!l.com</p>
+        <p class="bi bi-telephone-fill">&nbsp;聯絡電話：04-8888-6666</p>
+        <p class="bi bi-signpost-2-fill">&nbsp;聯絡地址：台中市西曬區台灣小道切八段1號102樓</p>
+      </div>
+    </div>
+
   </div>
-  <script src="../_js/bootstrap.bundle.js"></script>
+  <div>
+    <p style="text-align: center;">LearnForFun Co.,Ltd.版權沒有@</p>
+  </div>
+  </div>
+
 </body>
+<script src="../_js/bootstrap.bundle.js"></script>
+
+<script>
+  // 登入按鈕
+  function showMessege() {
+    var x = prompt("請輸入帳號");
+    var y = prompt("請輸入密碼");
+
+  }
+
+  <!-- 登出按鈕 -->
+
+  const toastLogout = document.getElementById('pageLogout')
+  const toastNoLogout = document.getElementById('cancelLogout')
+  if (toastLogout) {
+    toastLogout.addEventListener('click', () => {
+      const toast = new bootstrap.Toast(toastNoLogout)
+
+      toast.show()
+    })
+  }
+
+</script>
+
+<!-- 輸入帳密後的提示 -->
+<script>
+  function showMessege() {
+    // 使用 prompt 獲取輸入
+    let username = prompt("請輸入帳號：");
+    let password = prompt("請輸入密碼：");
+
+    // 檢查帳號和密碼是否匹配
+    if (username === "admin" && password === "admin") {
+      // 登錄成功，彈出提示框
+      alert("登錄成功ヽ(́◕◞౪◟◕‵)ﾉ");
+    } else {
+      // 登录失敗，彈出提示框
+      alert("登錄失敗，請檢查帳號和密碼(｡í _ ì｡)");
+    }
+  }
+</script>
 
 </html>

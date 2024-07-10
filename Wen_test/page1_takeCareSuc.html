@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <!-- BS ICONS https://icons.getbootstrap.com/icons/chat-right-dots-fill/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <title>多肉養護</title>
 
@@ -60,6 +62,31 @@
             margin: 15px;
             padding: 20px 25px;
             border-radius: 20px;
+        }
+
+        /* 登入按鈕  */
+        .logInBtn {
+            padding: 10px 20px;
+            top: 0%;
+            right: 0;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            outline: none;
+            /* position: fixed; */
+        }
+
+        /* 登出按鈕 */
+
+        .logoutBtn {
+            padding: 10px 20px;
+            right: 0;
+            bottom: 80%;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            outline: none;
+            /* position: fixed; */
         }
 
 
@@ -166,16 +193,30 @@
             <div>
                 <pre>    </pre>
                 <h1 class="myTitle">多肉植物相談所</h1>
-                <h1 style="color: rgba(55, 95, 65, 0.719)">succulent plants</h1>
+                <h1 style="color: rgba(55, 95, 65, 0.719)">Succulent plants</h1>
             </div>
             <!--succulent plants 多肉植物圖片1-->
             <img src="./image/imag_succ_招牌照.jpg" style="width: 200px;height: 200px; display: block;margin-left:2px" />
+
+            <div class="d-flex" style="position: fixed;right: 0;">
+                <!-- 會員登入按鈕 -->
+                <div class="logInBtn">
+                    <button onclick="showMessege()">會員登入</button>
+                </div>
+
+                <!-- 登出按鈕 -->
+                <div>
+                    <div class="logoutBtn">
+                        <button data-bs-toggle="modal" data-bs-target="#logOut">登出</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <br>
 
         <div class="d-flex sticky-top  " style="height: 50px;font-size: larger;">
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(230, 199, 61, 0.719);"
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(98, 160, 211, 0.932);"
                 onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/front%20page_succulent.html';">回到首頁</button>
 
             <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
@@ -243,8 +284,8 @@
                     <hr>
 
                     <br><br><br>
-                    <!--待調整-->
-                    <dt class=myP1Title> 照顧方法1 - 悶養</dt>
+                    <!--栽種方法 - 悶養-->
+                    <dt class=myP1Title> 栽種方法 - 悶養</dt>
                     <dd class="myP1Data">
                         <p style="font-size: larger;">悶養是什麼?</p>
 
@@ -268,10 +309,6 @@
                             <td colspan="2">經過悶養的玉露，更加透亮、飽滿。</td>
                         </tr>
                     </table>
-
-                    <!-- <div style="display: inline-block;">
-                        <img src="../Wen_test/image/imag_succ (4).jpg">
-                    </div> -->
                     <br><br>
 
                     <dt class="myP1Title" style="color: rgba(204, 11, 11, 0.863);">悶養會有什麼隱藏的風險呢？</dt>
@@ -303,16 +340,32 @@
                     </table>
                     <br>
 
-
                     <dd class="myP1Data m-2 p-2">
                         <p style="font-size: larger;">什麼樣的多肉不適合悶養？</p>
-                        △植物有葉傷尚未痊癒<br>
-                        △發生徒長不久/徒長太過嚴重的植物<br>
-                        △植物狀態乾扁太久<br>
-                        △夏天的任何狀態
+                        <p>&nbsp;&nbsp;△&nbsp;植物有葉傷尚未痊癒</p>
+                        <p>&nbsp;&nbsp;△&nbsp;發生徒長不久/徒長太過嚴重的植物</p>
+                        <p>&nbsp;&nbsp;△&nbsp;植物狀態乾扁太久</p>
+                        <p>&nbsp;&nbsp;△&nbsp;夏天的任何狀態</p>
                     </dd>
                     <br>
                     <br>
+                    <!--栽種方法 - 水苔種植-->
+                    <dt class=myP1Title> 栽種方法 - 水苔種植</dt>
+                    <dd class="myP1Data">
+                        <p style="font-size: larger;">水苔是什麼?</p>
+                        <p>種植多肉植物時使用的「水苔」，通常指的是一種特殊的栽培介質，主要用於多肉植物的生長和栽培。這種水苔通常是一種鬆散、透氣性良好的材料，其主要作用是提供良好的根系生長環境，幫助植物吸收水分和養分。
+                        </p>
+                        <br><br>
+                        <hr>
+                        水苔的特點是什麼？ <br><br>
+                        水苔的主要特點包括：<br>
+                        <ol>
+                            <li>透氣性良好：水苔能夠有效保持良好的空氣流通性，避免根部缺氧。</li>
+                            <li>保水性強：水苔具有良好的保水能力，能夠吸收和保持適量的水分，提供植物需要的水分。</li>
+                            <li>低養分：一般來說，水苔本身不含豐富的養分，因此通常需要搭配添加肥料或者其他有機質來提供植物生長所需的養分。</li>
+                            <li>輕便易用：水苔質地輕盈，便於管理和更換。</li><br>
+                            在多肉植物的栽培中，水苔常被用來作為其根系的生長介質，有助於避免植株過度濕潤和根部腐爛的問題，同時也提供了良好的生長環境。<br>
+                    </dd>
 
                     <div class="floating-button2">
                         <a href="#"><button style="font-weight: bolder;">Top↑</button></a>
@@ -321,23 +374,97 @@
                     <br><br><br>
                 </dl>
             </div>
-            <div class="box">
-                <div>
-                    <p>客服資訊</p>
-                    <p class="bi bi-clock-fill">&nbsp;服務時間：周一至周五&nbsp;10:00~17:00</p>
-                    <p class="bi bi-envelope-fill">&nbsp;信箱：succ@gma!l.com</p>
-                    <p class="bi bi-telephone-fill">&nbsp;電話：04-8888-6666</p>
-                    <p class="bi bi-signpost-2-fill">&nbsp;地址：台中市西曬區台灣小道切八段1號102樓</p>
-                </div>
 
+            <!-- 登入登出按鈕 -->
+            <div class="modal " tabindex="-1" id="logOut" data-bs-backdrop="static">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">提示訊息</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>是否確認登出?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">再逛一下</button>
+                            <div></div>
+                            <button type="button" class="btn btn-primary" id="pageLogout"
+                                data-bs-dismiss="modal">確認登出</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+                    <div class=" toast bg-warning" id="cancelLogout">
+                        <div class="toast-header">
+                            <span class="me-auto">提示</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">登出成功</div>
+                    </div>
+                </div>
             </div>
 
         </div>
-        <div>
-            <p style="text-align: center;">LearnForFun Co.,Ltd.版權沒有@</p>
+        <hr>
+        <!-- 最下方資訊欄位-->
+        <div class="box">
+            <div>
+                <p>客服資訊</p>
+                <p class="bi bi-clock-fill">&nbsp;服務時間：周一至周五&nbsp;10:00~17:00</p>
+                <p class="bi bi-envelope-fill">&nbsp;信箱：succ@gma!l.com</p>
+                <p class="bi bi-telephone-fill">&nbsp;電話：04-8888-6666</p>
+                <p class="bi bi-signpost-2-fill">&nbsp;地址：台中市西曬區台灣小道切八段1號102樓</p>
+            </div>
+
         </div>
+
+    </div>
+    <div>
+        <p style="text-align: center;">LearnForFun Co.,Ltd.版權沒有@</p>
+    </div>
     </div>
 
 </body>
+<script>
+
+    // 登入按鈕
+    function showMessege() {
+        let x = prompt("請輸入帳號");
+        let y = prompt("請輸入密碼");
+    }
+
+    //登出按鈕
+
+    const toastLogout = document.getElementById('pageLogout')
+    const toastNoLogout = document.getElementById('cancelLogout')
+    if (toastLogout) {
+        toastLogout.addEventListener('click', () => {
+            const toast = new bootstrap.Toast(toastNoLogout)
+
+            toast.show()
+        })
+    }
+</script>
+
+<script>
+    function showMessege() {
+        // 使用 prompt 獲取輸入
+        let username = prompt("請輸入帳號：");
+        let password = prompt("請輸入密碼：");
+
+        // 檢查帳號和密碼是否匹配
+        if (username === "admin" && password === "admin") {
+            // 登錄成功，彈出提示框
+            alert("登錄成功ヽ(́◕◞౪◟◕‵)ﾉ");
+        } else {
+            // 登录失敗，彈出提示框
+            alert("登錄失敗，請檢查帳號和密碼(｡í _ ì｡)");
+        }
+    }
+</script>
 
 </html>

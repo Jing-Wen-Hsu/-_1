@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <!-- BS ICONS https://icons.getbootstrap.com/icons/chat-right-dots-fill/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <title>多肉圖鑑</title>
 
@@ -136,6 +138,32 @@
             /* 确保在其他内容之上*/
         }
 
+        /* 登出按鈕 */
+
+        .logoutBtn {
+            padding: 10px 20px;
+            right: 0;
+            bottom: 80%;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            outline: none;
+            /* position: fixed; */
+        }
+
+        /* 登入按鈕  */
+
+        .logInBtn {
+            padding: 10px 20px;
+            top: 0%;
+            right: 0;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            outline: none;
+            /* position: fixed; */
+        }
+
         /*top按鈕*/
         .floating-button2 button {
             padding: 10px 20px;
@@ -167,7 +195,6 @@
 
         }
 
-
         /*介紹照片*/
         .myPic {
             display: block;
@@ -178,7 +205,6 @@
             height: auto;
             padding-bottom: 10px;
         }
-
 
         /*固定列*/
         .rounded-btn {
@@ -208,37 +234,50 @@
             <div>
                 <pre>    </pre>
                 <h1 class="myTitle">多肉植物相談所</h1>
-                <h1 style="color: rgba(55, 95, 65, 0.719)">succulent plants</h1>
+                <h1 style="color: rgba(55, 95, 65, 0.719)">Succulent plants</h1>
             </div>
             <!--succulent plants 多肉植物圖片1-->
             <img src="./image/imag_succ_招牌照.jpg" style="width: 200px;height: 200px; display: block;margin-left:2px" />
+
+            <div class="d-flex" style="position: fixed;right: 0;">
+                <!-- 會員登入按鈕 -->
+                <div class="logInBtn">
+                    <button onclick="showMessege()">會員登入</button>
+                </div>
+
+                <!-- 登出按鈕 -->
+                <div>
+                    <div class="logoutBtn">
+                        <button data-bs-toggle="modal" data-bs-target="#logOut">登出</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
+
         <br>
+        <!-- 導覽列 -->
         <div class="d-flex sticky-top" style="height: 50px;font-size: larger;">
             <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
                 onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page1_takeCareSuc.html';">多肉養護</button>
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(230, 199, 61, 0.719);"
+            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(84, 187, 151, 0.938);"
                 onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/front%20page_succulent.html';">回到首頁</button>
 
             <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
                 onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page3_store.html';">購買多肉</button>
             <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
                 onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page5_connection.html'">留言板</button>
-
         </div>
-        <!--回到首頁按鈕 固定在頁面-->
-        <!-- <div class="floating-button">
-        <a href="http://127.0.0.1:5501/Wen_test/front%20page_succulent.html"><button>回到首頁</button></a>
-    </div> -->
+
         <br><br><br><br>
 
         <h1
-            style="color: rgba(131, 10, 179, 0.548); background-color: rgba(255, 200, 128, 0.795); font-size: 48px;font-weight: bold;">
+            style="color: rgba(8, 105, 57, 0.644); background-color: rgba(255, 200, 128, 0.795); font-size: 48px;font-weight: bold;">
             多肉圖鑑</h1>
         <br>
         <hr>
 
+        <!-- 選擇觀看 -->
         <div class="choose">
             <h3 style="font-weight: bold;">我想認識：</h3>
             <a href="#suc1"><button class="myColor">虹之玉</button></a>
@@ -415,33 +454,52 @@
                         <li>繁殖方法：熊童子可以通過葉片插芽或枝條扦插繁殖，方法簡單且成功率高。</li>
                     </ul><br>
                 </div>
-                <img src="./image/imag_succ (8).jpg" class="myPic">
+                <img src="./image/imag_succ (12).jpg" class="myPic">
                 <br>
 
+                <!-- Top按鈕 -->
                 <div class="floating-button2">
                     <a href="#"><button>Top↑</button></a>
                 </div>
-                <!--收合介紹-->
-                <script>
-                    // JavaScript 代碼，實現點擊展開和收起功能
-                    document.querySelectorAll('.toggle').forEach(item => {
-                        item.addEventListener('click', () => {
-                            const content = item.nextElementSibling;
-                            const symbol = item.querySelector('.toggleSymbol');
-                            if (content.classList.contains('hidden')) {
-                                content.classList.remove('hidden');
-                                symbol.textContent = '-';
-                            } else {
-                                content.classList.add('hidden');
-                                symbol.textContent = '+';
-                            }
-                        });
-                    });
-                </script>
+
                 <br><br><br>
                 </dl>
             </div>
         </div>
+        <!-- 登入登出按鈕 -->
+        <div class="modal " tabindex="-1" id="logOut" data-bs-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">提示訊息</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>是否確認登出?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">再逛一下</button>
+                        <div></div>
+                        <button type="button" class="btn btn-primary" id="pageLogout"
+                            data-bs-dismiss="modal">確認登出</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+                <div class=" toast bg-warning" id="cancelLogout">
+                    <div class="toast-header">
+                        <span class="me-auto">提示</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">登出成功</div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- 最下列訊息框 -->
         <div class="box">
             <div>
                 <p>客服資訊</p>
@@ -457,5 +515,60 @@
     </div>
 
 </body>
+
+<script>
+    // 登入按鈕
+    function showMessege() {
+        var x = prompt("請輸入帳號");
+        var y = prompt("請輸入密碼");
+    }
+
+    //登出按鈕
+    const toastLogout = document.getElementById('pageLogout')
+    const toastNoLogout = document.getElementById('cancelLogout')
+    if (toastLogout) {
+        toastLogout.addEventListener('click', () => {
+            const toast = new bootstrap.Toast(toastNoLogout)
+
+            toast.show()
+        })
+    }
+
+</script>
+
+<!--收合介紹-->
+<!--JavaScript 代碼，實現點擊展開和收起功能 -->
+<script>
+    document.querySelectorAll('.toggle').forEach(item => {
+        item.addEventListener('click', () => {
+            const content = item.nextElementSibling;
+            const symbol = item.querySelector('.toggleSymbol');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                symbol.textContent = '-';
+            } else {
+                content.classList.add('hidden');
+                symbol.textContent = '+';
+            }
+        });
+    });
+</script>
+<!-- 輸入帳密後的提示 -->
+<script>
+    function showMessege() {
+        // 使用 prompt 獲取輸入
+        let username = prompt("請輸入帳號：");
+        let password = prompt("請輸入密碼：");
+
+        // 檢查帳號和密碼是否匹配
+        if (username === "admin" && password === "admin") {
+            // 登錄成功，彈出提示框
+            alert("登錄成功ヽ(́◕◞౪◟◕‵)ﾉ");
+        } else {
+            // 登录失敗，彈出提示框
+            alert("登錄失敗，請檢查帳號和密碼(｡í _ ì｡)");
+        }
+    }
+</script>
 
 </html>
