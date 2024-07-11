@@ -128,15 +128,7 @@
         }
 
 
-        /*  回到首頁按鈕 固定在頁面 */
 
-        .floating-button2 {
-            position: fixed;
-            bottom: 50px;
-            right: 50px;
-            z-index: 1000;
-            /* 确保在其他内容之上*/
-        }
 
         /* 登出按鈕 */
 
@@ -162,6 +154,16 @@
             cursor: pointer;
             outline: none;
             /* position: fixed; */
+        }
+
+        /*  回到首頁按鈕 固定在頁面 */
+
+        .floating-button2 {
+            position: fixed;
+            bottom: 15%;
+            right: 0;
+            z-index: 1000;
+            /* 确保在其他内容之上*/
         }
 
         /*top按鈕*/
@@ -517,12 +519,6 @@
 </body>
 
 <script>
-    // 登入按鈕
-    function showMessege() {
-        var x = prompt("請輸入帳號");
-        var y = prompt("請輸入密碼");
-    }
-
     //登出按鈕
     const toastLogout = document.getElementById('pageLogout')
     const toastNoLogout = document.getElementById('cancelLogout')
@@ -533,7 +529,24 @@
             toast.show()
         })
     }
+</script>
 
+<!-- 輸入帳密後的提示 -->
+<script>
+    function showMessege() {
+        // 使用 prompt 獲取輸入
+        let username = prompt("請輸入帳號：");
+        let password = prompt("請輸入密碼：");
+
+        // 檢查帳號和密碼是否匹配
+        if (username === "admin" && password === "admin") {
+            // 登入成功，彈出提示框
+            alert("登入成功ヽ(́◕◞౪◟◕‵)ﾉ");
+        } else {
+            // 登入失敗，彈出提示框
+            alert("登入失敗，請檢查帳號和密碼(｡í _ ì｡)");
+        }
+    }
 </script>
 
 <!--收合介紹-->
@@ -552,23 +565,6 @@
             }
         });
     });
-</script>
-<!-- 輸入帳密後的提示 -->
-<script>
-    function showMessege() {
-        // 使用 prompt 獲取輸入
-        let username = prompt("請輸入帳號：");
-        let password = prompt("請輸入密碼：");
-
-        // 檢查帳號和密碼是否匹配
-        if (username === "admin" && password === "admin") {
-            // 登錄成功，彈出提示框
-            alert("登錄成功ヽ(́◕◞౪◟◕‵)ﾉ");
-        } else {
-            // 登录失敗，彈出提示框
-            alert("登錄失敗，請檢查帳號和密碼(｡í _ ì｡)");
-        }
-    }
 </script>
 
 </html>

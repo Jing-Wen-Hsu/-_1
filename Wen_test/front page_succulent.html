@@ -127,7 +127,6 @@
 
 
     /* 登出按鈕 */
-
     .logoutBtn {
       padding: 10px 20px;
       right: 0;
@@ -157,7 +156,7 @@
       background-color: #3a9971b7;
       color: #063506;
       padding: 10px 20px;
-      bottom: 10%;
+      bottom: 15%;
       right: 0;
       border: none;
       border-radius: 20px;
@@ -165,8 +164,6 @@
       outline: none;
       position: fixed;
     }
-
-
 
     /* 所有元素帶出框線以便檢視排版位置 */
     /* * {
@@ -182,16 +179,18 @@
 
     <div style="display: flex">
 
-      <!-- 招牌 -->
+      <!-- 招牌文字 -->
       <div>
         <pre>    </pre>
         <h1 class="myTitle">多肉植物相談所</h1>
         <h1 style="color: rgba(55, 95, 65, 0.719)">Succulent plants</h1>
       </div>
-      <!--succulent plants 多肉植物圖片1-->
+      <!--succulent plants 招牌圖片-->
       <img src="./image/imag_succ_招牌照.jpg" style="width: 200px;height: 200px; display: block" />
 
+      <!-- 登入及登出按鈕 -->
       <div class="d-flex" style="position: fixed;right: 0;">
+
         <!-- 會員登入按鈕 -->
         <div class="logInBtn">
           <button onclick="showMessege()">會員登入</button>
@@ -208,8 +207,7 @@
     </div>
     <br>
 
-    <!-- 首頁最上方選單 -->
-
+    <!-- 導覽列 -->
     <div class="d-flex sticky-top" style="height: 50px;font-size: larger;">
       <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
         onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page1_takeCareSuc.html';">多肉養護</button>
@@ -228,7 +226,8 @@
     <hr />
     <div class="container">
       <div class="container w-80">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+          <!-- 總張數按鈕 -->
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
               aria-current="true" aria-label="Slide 1"></button>
@@ -238,22 +237,26 @@
               aria-label="Slide 3"></button>
           </div>
 
+          <!-- 照片 -->
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="./image/succulent-4453152_1280.jpg" class="d-block w-100 img-fluid" alt="..." />
+              <img src="./image/succulent-4453152_1280.jpg" class="d-block w-100 img-fluid" />
             </div>
             <div class="carousel-item">
-              <img src="./image/succulent-4713264_1280(size).jpg" class="d-block w-100 img-fluid" alt="..." />
+              <img src="./image/succulent-4713264_1280(size).jpg" class="d-block w-100 img-fluid" />
             </div>
             <div class="carousel-item">
-              <img src="./image/succulents-757632_1280.jpg" class="d-block w-100 img-fluid" alt="..." />
+              <img src="./image/succulents-757632_1280.jpg" class="d-block w-100 img-fluid" />
             </div>
           </div>
+
+          <!-- 前後張按鈕 -->
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
+
           <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -271,7 +274,7 @@
         <dt class="dlStyle" id="introduce">多肉簡介</dt>
         <div class="dtStyle" ;>
           <dd>
-            <div style="padding: 15px;">
+            <div style="padding: 18px;">
               <p style="font-size: x-large;color: rgba(8, 42, 65, 0.753);">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;多肉植物是一類葉片厚實、儲存水分的植物，因其獨特外觀和容易護理而受到人們喜愛。能在土壤乾旱的條件下擁有肥大的葉或莖甚至是貯藏器官（例如是根莖），多肉植物主要生長於沙漠及海岸乾旱地區。它們的根、莖特別肥大，葉片退化，以利於儲存大量的水分。
               </p>
@@ -420,7 +423,7 @@
       </div>
     </div>
 
-<hr>
+    <hr>
     <!-- 版權、資訊框 -->
 
     <div class="box">
@@ -443,14 +446,8 @@
 <script src="../_js/bootstrap.bundle.js"></script>
 
 <script>
-  // 登入按鈕
-  function showMessege() {
-    var x = prompt("請輸入帳號");
-    var y = prompt("請輸入密碼");
 
-  }
-
-  <!-- 登出按鈕 -->
+  //登出按鈕
 
   const toastLogout = document.getElementById('pageLogout')
   const toastNoLogout = document.getElementById('cancelLogout')
@@ -464,20 +461,20 @@
 
 </script>
 
-<!-- 輸入帳密後的提示 -->
+<!-- 會員登入 輸入帳密後的提示 -->
 <script>
   function showMessege() {
     // 使用 prompt 獲取輸入
-    let username = prompt("請輸入帳號：");
-    let password = prompt("請輸入密碼：");
+    const username = prompt("請輸入帳號：");
+    const password = prompt("請輸入密碼：");
 
     // 檢查帳號和密碼是否匹配
     if (username === "admin" && password === "admin") {
-      // 登錄成功，彈出提示框
-      alert("登錄成功ヽ(́◕◞౪◟◕‵)ﾉ");
+      // 登入成功，彈出提示框
+      alert("登入成功ヽ(́◕◞౪◟◕‵)ﾉ");
     } else {
       // 登录失敗，彈出提示框
-      alert("登錄失敗，請檢查帳號和密碼(｡í _ ì｡)");
+      alert("登入失敗，請檢查帳號和密碼(｡í _ ì｡)");
     }
   }
 </script>

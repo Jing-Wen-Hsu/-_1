@@ -64,6 +64,15 @@
             border-radius: 20px;
         }
 
+        /*快速跳轉的按鈕*/
+        .myColor {
+            background-color: rgba(116, 179, 116, 0.473);
+            color: #063506;
+            margin: 10px;
+            padding: 5px;
+            font-weight: bold;
+        }
+
         /* 登入按鈕  */
         .logInBtn {
             padding: 10px 20px;
@@ -77,7 +86,6 @@
         }
 
         /* 登出按鈕 */
-
         .logoutBtn {
             padding: 10px 20px;
             right: 0;
@@ -94,9 +102,9 @@
         /* button2-TOP */
         .floating-button2 {
             position: fixed;
-            bottom: 5%;
+            bottom: 15%;
             /* 距离底部的距离 */
-            right: 2%;
+            right: 0;
             /* 距离右侧的距离 */
             z-index: 1000;
             /* 确保在其他内容之上 */
@@ -168,6 +176,14 @@
             border-radius: 100px;
         }
 
+        /* 快速跳轉# */
+        .choose {
+            font-size: 25px;
+            background-color: rgba(209, 226, 149, 0.637);
+            padding: 10px 10px;
+
+        }
+
         /*最下方資訊欄位*/
         .box {
             display: flex;
@@ -228,150 +244,168 @@
                 onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page5_connection.html'">留言板</button>
 
         </div>
+        <br><br>
 
 
-        <!--回到首頁按鈕 固定在頁面-->
         <div>
-            <!-- <div class="floating-button">
-            <a href="http://127.0.0.1:5501/Wen_test/front%20page_succulent.html"><button
-                    style="font-weight: bolder;">回到首頁</button></a>
-        </div> -->
+            <div>
 
+                <!-- 選擇觀看 -->
+                <div class="choose">
+                    <h3 style="font-weight: bold;">快速跳轉至</h3>
+                    <a href="#basic"><button class="myColor">多肉養護基本知識</button></a>
+                    <a href="#planting_1"><button class="myColor">栽種方法 - 悶養</button></a>
+                    <a href="#planting_2"><button class="myColor">栽種方法 - 水苔</button></a>
+                    <a href=""><button class="myColor"
+                            style="background-color: gray;color: white;font-weight: normal;">建置中</button></a>
+                    <a href=""><button class="myColor"
+                            style="background-color: gray;color: white;font-weight: normal;">敬請期待</button></a>
+                    <a href=""><button class="myColor"
+                            style="background-color: gray; color: white;font-weight: normal;">٩(๑•̀ω•́๑)۶</button></a>
+                </div>
+                <hr>
+
+            </div>
             <div class="container" id="interduce">
-                <dl>
-                    <dt style="background-color: #238a09ad;
+                <dt id="basic" style="margin: 20px;">&nbsp;&nbsp;</dt>
+                <dt style="background-color: #238a09ad;
                         font-size: xx-large;color: #f1e0a4;
                         height: auto; 
                         padding: 5px ;
                         border-radius: 10px;">
-                        多肉養護
+                    多肉養護基本知識
+                </dt>
+
+                <div style="display: inline-block;">
+                    <p class="description">
+                        多肉植物是一種特別適合初學者的植物，因為它們相對容易照料並能在室內或室外環境中生存。以下是一些多肉植物的基本養護方法：</p>
+                </div>
+                <br>
+                <div>
+                    <dl>
+                        <dt class=myP1Title>1.適當的照明：</dt>
+                        <dd class="myP1Data">多肉植物喜歡明亮的光線，可以放在室內靠近窗戶的位置，或者在室外陰涼處。避免直接暴露在強烈陽光下，尤其是在夏季的炎熱時段。</dd>
+                    </dl>
+
+                    <dt class=myP1Title>2.適量的澆水：</dt>
+                    <dd class="myP1Data">通常情況下，多肉植物不需要太多水。每次澆水時讓土壤完全乾燥後再次澆水。冬季應該更少澆水，因為植物生長速度較慢。</dd>
+
+                    <dt class=myP1Title>3.良好的排水系統：</dt>
+                    <dd class="myP1Data">使用能夠排水的容器和土壤混合物，以防止多肉植物根部過度濕潤而腐爛。</dd>
+
+                    <dt class=myP1Title>4.適當的溫度：</dt>
+                    <dd class="myP1Data">多肉植物通常適應於溫暖的環境，但也能忍受較冷的溫度，只要不低於攝氏5度。在寒冷季節，應該避免暴露在極寒的環境中。</dd>
+
+                    <dt class=myP1Title>5.定期施肥：</dt>
+                    <dd class="myP1Data">在生長季節（春天到夏天）定期給予多肉植物適量的肥料，例如專用的多肉植物肥料或者稀釋過的普通室內植物肥料。冬季則不需要施肥。</dd>
+
+                    <dt class=myP1Title>6.定期檢查和維護：</dt>
+                    <dd class="myP1Data">檢查多肉植物是否有害蟲或病害的跡象，及時處理。定期檢查植物的健康狀況，必要時更換土壤或重新植入。</dd>
+
+                    <dt
+                        style="margin-left: 25px;margin-right: 25px;margin-top: 50px; font-size: x-large;border: solid #213d35 5px; padding: 25px;">
+                        <p style="font-size: larger;">總結來說，</p>
+                        <p>多肉植物的養護相對簡單，主要是確保它們獲得適當的光線、水分和溫度，並且適時進行基本的維護。通過這些基本的方法，可以确保您的多肉植物能夠健康茁壯地生長。</p>
                     </dt>
+                </div>
 
-                    <div style="display: inline-block;">
-                        <p class="description">
-                            多肉植物是一種特別適合初學者的植物，因為它們相對容易照料並能在室內或室外環境中生存。以下是一些多肉植物的基本養護方法：</p>
-                    </div>
-                    <br>
-                    <div>
-                        <dl>
-                            <dt class=myP1Title>1.適當的照明：</dt>
-                            <dd class="myP1Data">多肉植物喜歡明亮的光線，可以放在室內靠近窗戶的位置，或者在室外陰涼處。避免直接暴露在強烈陽光下，尤其是在夏季的炎熱時段。</dd>
-                        </dl>
+                <br><br><br><br>
+                <hr>
 
-                        <dt class=myP1Title>2.適量的澆水：</dt>
-                        <dd class="myP1Data">通常情況下，多肉植物不需要太多水。每次澆水時讓土壤完全乾燥後再次澆水。冬季應該更少澆水，因為植物生長速度較慢。</dd>
+                <br><br>
+                <!--栽種方法 - 悶養-->
+                <dt id="planting_1" style="margin: 20px;">&nbsp;&nbsp;</dt>
+                <dt class=myP1Title> 栽種方法 - 悶養</dt>
+                <dd class="myP1Data">
+                    <p style="font-size: larger;">悶養是什麼?</p>
 
-                        <dt class=myP1Title>3.良好的排水系統：</dt>
-                        <dd class="myP1Data">使用能夠排水的容器和土壤混合物，以防止多肉植物根部過度濕潤而腐爛。</dd>
-
-                        <dt class=myP1Title>4.適當的溫度：</dt>
-                        <dd class="myP1Data">多肉植物通常適應於溫暖的環境，但也能忍受較冷的溫度，只要不低於攝氏5度。在寒冷季節，應該避免暴露在極寒的環境中。</dd>
-
-                        <dt class=myP1Title>5.定期施肥：</dt>
-                        <dd class="myP1Data">在生長季節（春天到夏天）定期給予多肉植物適量的肥料，例如專用的多肉植物肥料或者稀釋過的普通室內植物肥料。冬季則不需要施肥。</dd>
-
-                        <dt class=myP1Title>6.定期檢查和維護：</dt>
-                        <dd class="myP1Data">檢查多肉植物是否有害蟲或病害的跡象，及時處理。定期檢查植物的健康狀況，必要時更換土壤或重新植入。</dd>
-
-                        <dt
-                            style="margin-left: 25px;margin-right: 25px;margin-top: 50px; font-size: x-large;border: solid #213d35 5px; padding: 25px;">
-                            <p style="font-size: larger;">總結來說，</p>
-                            <p>多肉植物的養護相對簡單，主要是確保它們獲得適當的光線、水分和溫度，並且適時進行基本的維護。通過這些基本的方法，可以确保您的多肉植物能夠健康茁壯地生長。</p>
-                        </dt>
-                    </div>
-
-                    <br><br><br>
-                    <hr>
-
-                    <br><br><br>
-                    <!--栽種方法 - 悶養-->
-                    <dt class=myP1Title> 栽種方法 - 悶養</dt>
-                    <dd class="myP1Data">
-                        <p style="font-size: larger;">悶養是什麼?</p>
-
-                        悶養是指在植株澆水後，用專用的悶養蓋或是用任何透明的罩子將植株整盆罩住，留下少量的透氣孔，並在加蓋前噴灑部分水分在蓋子上，讓罩子內的空氣濕度提高到接近100%，空氣濕度的提高能讓植物減緩水分從蒸散作用中散失。
-                        <br><br>
-                        <hr>
-                        悶養對多肉好嗎？ <br>
-                        什麼樣的多肉適合悶養?<br><br>
-                        這個問題其實不是那麼好回答，需要評估種植環境、澆水頻率、多肉品種等等因素；適合悶養的多肉品種之一首推玉露，玉露經過悶養提高空氣濕度，可讓玉露的窗邊更透更亮，不過悶養還是有可能引發許多潛在的問題！<br><br>
-                        接下來我們一一列出可能會發生的狀況希望你們能種出更美的植株，而且悶養確實能讓植物在短時間變成好看的狀態。
-                    </dd>
-                    <table>
-                        <tr>
-                            <th colspan="2" style="font-size: large;">晶瑩剔透的玉露</th>
-
-                        </tr>
-                        <tr>
-                            <td colspan="2"><img src="./image/imag_succ (4).jpg"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">經過悶養的玉露，更加透亮、飽滿。</td>
-                        </tr>
-                    </table>
+                    悶養是指在植株澆水後，用專用的悶養蓋或是用任何透明的罩子將植株整盆罩住，留下少量的透氣孔，並在加蓋前噴灑部分水分在蓋子上，讓罩子內的空氣濕度提高到接近100%，空氣濕度的提高能讓植物減緩水分從蒸散作用中散失。
                     <br><br>
+                    <hr>
+                    悶養對多肉好嗎？ <br>
+                    什麼樣的多肉適合悶養?<br><br>
+                    這個問題其實不是那麼好回答，需要評估種植環境、澆水頻率、多肉品種等等因素；適合悶養的多肉品種之一首推玉露，玉露經過悶養提高空氣濕度，可讓玉露的窗邊更透更亮，不過悶養還是有可能引發許多潛在的問題！<br><br>
+                    接下來我們一一列出可能會發生的狀況希望你們能種出更美的植株，而且悶養確實能讓植物在短時間變成好看的狀態。
+                </dd>
+                <table>
+                    <tr>
+                        <th colspan="2" style="font-size: large;">晶瑩剔透的玉露</th>
 
-                    <dt class="myP1Title" style="color: rgba(204, 11, 11, 0.863);">悶養會有什麼隱藏的風險呢？</dt>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><img src="./image/imag_succ (4).jpg"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">經過悶養的玉露，更加透亮、飽滿。</td>
+                    </tr>
+                </table>
+                <br><br>
 
-                    <dd class="myP1Data">
-                        <p style="font-size: x-large;color: red;">染菌</p>
-                        高濕度會讓大部分的細菌有更高的活力與繁殖力，再加上悶養時會讓通風度降低，容易發生染菌的問題。
-                    </dd>
-                    <dd class="myP1Data">
-                        <p style="font-size: x-large;color: red;">徒長</p>
-                        植株的徒長除了和陽光有關外，也和環境通風度與濕度有關，高濕度環境如果沒有搭配較高強度的陽光，就容易發生徒長，更不用說悶養時的空氣濕度接近100%了。
-                    </dd>
+                <dt class="myP1Title" style="color: rgba(204, 11, 11, 0.863);">悶養會有什麼隱藏的風險呢？</dt>
 
-                    <table style="font-size: large;">
+                <dd class="myP1Data">
+                    <p style="font-size: x-large;color: red;">染菌</p>
+                    高濕度會讓大部分的細菌有更高的活力與繁殖力，再加上悶養時會讓通風度降低，容易發生染菌的問題。
+                </dd>
+                <dd class="myP1Data">
+                    <p style="font-size: x-large;color: red;">徒長</p>
+                    植株的徒長除了和陽光有關外，也和環境通風度與濕度有關，高濕度環境如果沒有搭配較高強度的陽光，就容易發生徒長，更不用說悶養時的空氣濕度接近100%了。
+                </dd>
 
-                        <tr>
-                            <th>正常的姬朧月</th>
-                            <th>徒長的姬朧月</th>
-                        </tr>
-                        <tr>
-                            <td><img src="./image/未徒長.png"></td>
-                            <td><img src="./image/徒長.png"></td>
-                        </tr>
-                        <tr>
-                            <td>葉片緊密，呈現好看的花形。</td>
-                            <td>葉片間距拉大，像棵小樹。&nbsp;&nbsp;&nbsp;</td>
-                        </tr>
+                <table style="font-size: large;">
 
-                    </table>
-                    <br>
+                    <tr>
+                        <th>正常的姬朧月</th>
+                        <th>徒長的姬朧月</th>
+                    </tr>
+                    <tr>
+                        <td><img src="./image/未徒長.png"></td>
+                        <td><img src="./image/徒長.png"></td>
+                    </tr>
+                    <tr>
+                        <td>葉片緊密，呈現好看的花形。</td>
+                        <td>葉片間距拉大，像棵小樹。&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
 
-                    <dd class="myP1Data m-2 p-2">
-                        <p style="font-size: larger;">什麼樣的多肉不適合悶養？</p>
-                        <p>&nbsp;&nbsp;△&nbsp;植物有葉傷尚未痊癒</p>
-                        <p>&nbsp;&nbsp;△&nbsp;發生徒長不久/徒長太過嚴重的植物</p>
-                        <p>&nbsp;&nbsp;△&nbsp;植物狀態乾扁太久</p>
-                        <p>&nbsp;&nbsp;△&nbsp;夏天的任何狀態</p>
-                    </dd>
-                    <br>
-                    <br>
-                    <!--栽種方法 - 水苔種植-->
-                    <dt class=myP1Title> 栽種方法 - 水苔種植</dt>
-                    <dd class="myP1Data">
-                        <p style="font-size: larger;">水苔是什麼?</p>
-                        <p>種植多肉植物時使用的「水苔」，通常指的是一種特殊的栽培介質，主要用於多肉植物的生長和栽培。這種水苔通常是一種鬆散、透氣性良好的材料，其主要作用是提供良好的根系生長環境，幫助植物吸收水分和養分。
-                        </p>
-                        <br><br>
-                        <hr>
-                        水苔的特點是什麼？ <br><br>
-                        水苔的主要特點包括：<br>
-                        <ol>
-                            <li>透氣性良好：水苔能夠有效保持良好的空氣流通性，避免根部缺氧。</li>
-                            <li>保水性強：水苔具有良好的保水能力，能夠吸收和保持適量的水分，提供植物需要的水分。</li>
-                            <li>低養分：一般來說，水苔本身不含豐富的養分，因此通常需要搭配添加肥料或者其他有機質來提供植物生長所需的養分。</li>
-                            <li>輕便易用：水苔質地輕盈，便於管理和更換。</li><br>
-                            在多肉植物的栽培中，水苔常被用來作為其根系的生長介質，有助於避免植株過度濕潤和根部腐爛的問題，同時也提供了良好的生長環境。<br>
-                    </dd>
+                </table>
+                <br>
 
-                    <div class="floating-button2">
-                        <a href="#"><button style="font-weight: bolder;">Top↑</button></a>
-                    </div>
+                <dd class="myP1Data m-2 p-2">
+                    <p style="font-size: larger;">什麼樣的多肉不適合悶養？</p>
+                    <p>&nbsp;&nbsp;△&nbsp;植物有葉傷尚未痊癒</p>
+                    <p>&nbsp;&nbsp;△&nbsp;發生徒長不久/徒長太過嚴重的植物</p>
+                    <p>&nbsp;&nbsp;△&nbsp;植物狀態乾扁太久</p>
+                    <p>&nbsp;&nbsp;△&nbsp;夏天的任何狀態</p>
+                </dd>
+                <br><br><br><br>
+                <hr>
 
-                    <br><br><br>
+                <!--栽種方法 - 水苔種植-->
+                <div>
+                    <dt id="planting_2" style="margin: 50px;">&nbsp;&nbsp;</dt>
+                </div>
+                <dt class=myP1Title> 栽種方法 - 水苔種植</dt>
+                <dd class="myP1Data">
+                    <p style="font-size: larger;">水苔是什麼?</p>
+                    <p>種植多肉植物時使用的「水苔」，通常指的是一種特殊的栽培介質，主要用於多肉植物的生長和栽培。這種水苔通常是一種鬆散、透氣性良好的材料，其主要作用是提供良好的根系生長環境，幫助植物吸收水分和養分。
+                    </p>
+                    <br><br>
+                    <hr>
+                    水苔的特點是什麼？ <br><br>
+                    水苔的主要特點包括：<br>
+                    <ol>
+                        <li>透氣性良好：水苔能夠有效保持良好的空氣流通性，避免根部缺氧。</li>
+                        <li>保水性強：水苔具有良好的保水能力，能夠吸收和保持適量的水分，提供植物需要的水分。</li>
+                        <li>低養分：一般來說，水苔本身不含豐富的養分，因此通常需要搭配添加肥料或者其他有機質來提供植物生長所需的養分。</li>
+                        <li>輕便易用：水苔質地輕盈，便於管理和更換。</li><br>
+                        在多肉植物的栽培中，水苔常被用來作為其根系的生長介質，有助於避免植株過度濕潤和根部腐爛的問題，同時也提供了良好的生長環境。<br>
+                </dd>
+
+                <div class="floating-button2">
+                    <a href="#"><button style="font-weight: bolder;">Top↑</button></a>
+                </div>
+
+                <br><br><br>
                 </dl>
             </div>
 
@@ -431,12 +465,6 @@
 </body>
 <script>
 
-    // 登入按鈕
-    function showMessege() {
-        let x = prompt("請輸入帳號");
-        let y = prompt("請輸入密碼");
-    }
-
     //登出按鈕
 
     const toastLogout = document.getElementById('pageLogout')
@@ -453,16 +481,16 @@
 <script>
     function showMessege() {
         // 使用 prompt 獲取輸入
-        let username = prompt("請輸入帳號：");
-        let password = prompt("請輸入密碼：");
+        const username = prompt("請輸入帳號：");
+        const password = prompt("請輸入密碼：");
 
         // 檢查帳號和密碼是否匹配
         if (username === "admin" && password === "admin") {
             // 登錄成功，彈出提示框
-            alert("登錄成功ヽ(́◕◞౪◟◕‵)ﾉ");
+            alert("登入成功ヽ(́◕◞౪◟◕‵)ﾉ");
         } else {
-            // 登录失敗，彈出提示框
-            alert("登錄失敗，請檢查帳號和密碼(｡í _ ì｡)");
+            // 登錄失敗，彈出提示框
+            alert("登入失敗，請檢查帳號和密碼(｡í _ ì｡)");
         }
     }
 </script>

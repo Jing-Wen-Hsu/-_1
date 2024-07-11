@@ -67,39 +67,8 @@
             /* 增加右邊間距 */
         }
 
-        /* button2-Top */
-        .floating-button2 {
-            position: fixed;
-            bottom: 150px;
-            /* 距離底部的距離 */
-            left: 15px;
-            /* 距離右側的距離 */
 
-        }
-
-        .floating-button2 button {
-            padding: 10px 20px;
-            background-color: #cee9377c;
-            /* 按钮背景色 */
-            color: #df1b01;
-            /* 文字颜色 */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            outline: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* 阴影效果 */
-            transition: transform 0.2s ease-in-out;
-            /* 添加平滑过渡效果 */
-        }
-
-        .floating-button2 button:hover {
-            transform: translateY(-5px);
-            /* 按钮向上漂浮一点 */
-        }
-
-
-        /*固定列*/
+        /*導覽列*/
         .rounded-btn {
             border-radius: 10px;
             /* 设置圆角的半径，根据需要调整 */
@@ -108,27 +77,40 @@
             font-size: x-large;
         }
 
-        /* button2 TOP */
+        /* button2-TOP */
+        .floating-button2 {
+            position: fixed;
+            bottom: 15%;
+            /* 距离底部的距离 */
+            right: 0;
+            /* 距离右侧的距离 */
+            z-index: 1000;
+            /* 确保在其他内容之上 */
+
+
+        }
+
         .floating-button2 button {
             padding: 10px 20px;
             background-color: #3a9971b7;
             color: #063506;
-            right: 2%;
-            bottom: 2%;
+            font-weight: bolder;
+            left: 10px;
             border: none;
-            border-radius: 10px;
+            border-radius: 20px;
             cursor: pointer;
             outline: none;
-            position: fixed;
+            transition: transform 0.1s ease-in-out;
+            /* 添加平滑过渡效果 */
         }
 
         .floating-button2 button:hover {
-            transform: translateY(-15px);
+            transform: translateY(-10px);
             /* 按钮向上漂浮一点 */
         }
 
-        /* 登出按鈕 */
 
+        /* 登出按鈕 */
         .logoutBtn {
             padding: 10px 20px;
             right: 0;
@@ -359,7 +341,7 @@
 
         <!-- TOP按鈕 -->
         <div class="floating-button2">
-            <a href="#"><button style="font-weight: bolder;">Top↑</button></a>
+            <a href="#"><button>Top↑</button></a>
         </div>
 
 
@@ -412,7 +394,6 @@
         <p style="text-align: center;">LearnForFun Co.,Ltd.版權沒有@</p>
     </div>
 
-
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -426,7 +407,6 @@
     if (toastLogout) {
         toastLogout.addEventListener('click', () => {
             const toast = new bootstrap.Toast(toastNoLogout)
-
             toast.show()
         })
     }
@@ -434,30 +414,23 @@
     // 進入多肉商店分頁時的提示框
     var x = window.alert("選購多肉前請記得先登入帳號唷(๑•̀ω•́)ノ");
     console.log(x); //true或false
-
-    // 登入按鈕
-    function showMessege() {
-        let x = prompt("請輸入帳號");
-        let y = prompt("請輸入密碼");
-    }
-    alert(`x + y = ${parseInt(x) + parseInt(y)}`);
-
+    
 </script>
 
-<!-- 輸入帳密後的提示 -->
+<!-- 輸入帳號密碼後的提示訊息 -->
 <script>
     function showMessege() {
         // 使用 prompt 獲取輸入
-        let username = prompt("請輸入帳號：");
-        let password = prompt("請輸入密碼：");
+        const username = prompt("請輸入帳號：");
+        const password = prompt("請輸入密碼：");
 
         // 檢查帳號和密碼是否匹配
         if (username === "admin" && password === "123456") {
-            // 登錄成功，彈出提示框
-            alert("登錄成功ヽ(́◕◞౪◟◕‵)ﾉ");
+            // 登入成功，彈出提示框
+            alert("登入成功ヽ(́◕◞౪◟◕‵)ﾉ");
         } else {
-            // 登录失敗，彈出提示框
-            alert("登錄失敗，請檢查帳號和密碼(｡í _ ì｡)");
+            // 登入失敗，彈出提示框
+            alert("登入失敗，請檢查帳號和密碼(｡í _ ì｡)");
         }
     }
 </script>

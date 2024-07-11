@@ -192,9 +192,7 @@
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在這裡，您可以與我們分享您的經驗、提出問題，或是給我們的網站提供任何建議。<br><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我們非常期待聽到您的聲音，並願意為您提供解答。(^ω^) <br>
-
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;請留下您的姓名、聯絡信箱和您想要討論的主題及內容，我們將盡快回覆您的留言。<br><br>
-
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您對於多肉植物的養護有任何疑問，或者對於特定品種的資訊感興趣，都歡迎在此與我們
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交流。
             </h3>
@@ -204,13 +202,13 @@
 
         <div class="contact-form">
             <h2>訪客留言板</h2>
-            <form action="#" method="post">
+            <form action="./page7_dashboard.html" method="post">
                 <label for="name">姓名:</label>
                 <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required>
 
                 <div class="title-options">
                     <label><input type="radio" name="title" value="先生" required> 先生</label>
-                    <label><input type="radio" name="title" value="小姐" required> 小姐</label>
+                    <label><input type="radio" name="title" value="女士" required> 女士</label>
                     <label><input type="radio" name="title" value="其他" required> 暫不透露</label>
                 </div>
 
@@ -218,12 +216,16 @@
                 <input type="email" id="email" name="email" placeholder="請輸入您的信箱" required>
 
                 <label for="phone">聯絡電話:</label>
-                <input type="tel" id="phone" name="phone" placeholder="請輸入您的電話號碼">
+                <a href=""></a><input type="tel" id="phone" name="phone" placeholder="請輸入您的電話號碼">
 
                 <label for="phone">主題及內容:</label>
                 <input type="text" id="answer" name="answer" placeholder="請輸入您想分享諮詢的主題及內容  ε(*´･∀･｀)зﾞ"
                     style="height: 200px;">
-                <input type="submit" value="提交">
+
+                    <!-- 為了提交後跳轉頁面塞了一個a標籤，但這樣就不會檢查資料型態，不輸入資料也可送出 -->
+                <button type="submit" value="提交" style="background-color: rgb(8, 53, 38);"><a
+                        href="./page7_dashboard.html" style="text-decoration: none; color: #f9f9f9;">提交</a></button>
+                        <!-- <button type="submit">提交</button> 用這段才會檢查資料型態 -->
             </form>
         </div>
 
