@@ -172,17 +172,15 @@
         <br>
 
         <!-- 導覽列 -->
-        <div class="d-flex sticky-top" style="height: 50px;font-size: larger;">
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page1_takeCareSuc.html';">多肉養護</button>
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page2_sucInterduction.html';">多肉圖鑑</button>
-
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page3_store.html';">購買多肉</button>
-
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(84, 187, 151, 0.938);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/front%20page_succulent.html';">回到首頁</button>
+        <div class="d-flex sticky-top" style="height: 50px; font-size: larger;">
+            <a href="./page1_takeCareSuc.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(162, 204, 238); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">多肉養護</a>
+            <a href="./page2_sucInterduction.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(191, 226, 214); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">多肉圖鑑</a>
+            <a href="./page3_store.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(162, 204, 238); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">購買多肉</a>
+            <a href="./front page_succulent.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgba(84, 187, 151, 0.938); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">回到首頁</a>
         </div>
 
         <div>
@@ -219,13 +217,15 @@
                 <a href=""></a><input type="tel" id="phone" name="phone" placeholder="請輸入您的電話號碼">
 
                 <label for="phone">主題及內容:</label>
-                <input type="text" id="answer" name="answer" placeholder="請輸入您想分享諮詢的主題及內容  ε(*´･∀･｀)зﾞ"
-                    style="height: 200px;">
+                <input type="text" id="answer" name="answer" placeholder="請輸入您想分享或諮詢的主題及內容  ε(*´･∀･｀)зﾞ"
+                    style="height: 200px;" required>
 
-                    <!-- 為了提交後跳轉頁面塞了一個a標籤，但這樣就不會檢查資料型態，不輸入資料也可送出 -->
-                <button type="submit" value="提交" style="background-color: rgb(8, 53, 38);"><a
-                        href="./page7_dashboard.html" style="text-decoration: none; color: #f9f9f9;">提交</a></button>
-                        <!-- <button type="submit">提交</button> 用這段才會檢查資料型態 -->
+                <!-- 為了提交後跳轉頁面塞了一個a標籤，但這樣就不會檢查資料型態，不輸入資料也可送出 -->
+                <!-- <button type="submit" value="提交" style="background-color: rgb(8, 53, 38);"><a
+                        href="./page7_dashboard.html" style="text-decoration: none; color: #f9f9f9;">提交</a></button> -->
+                <button type="submit">提交</button>
+                <!-- <button type="submit" style="background-color: rgb(8, 53, 38); color: #f9f9f9; text-decoration: none;">提交</button> -->
+                <!-- 以上兩種才會檢查資料型態，但都無法跳到正常指定頁面-->
             </form>
         </div>
 
@@ -246,5 +246,24 @@
         <p style="text-align: center;">LearnForFun Co.,Ltd.版權沒有@</p>
     </div>
 </body>
+
+<script>
+
+    // 還是有問題，時好時壞 資料沒照格式也送得出去
+
+    document.querySelector('.contact-form form').addEventListener('submit', function (event) {
+        // 阻止表單默認提交行為
+        event.preventDefault();
+
+        // 這裡可以進行表單驗證等操作
+
+        // 提交表單數據
+        this.submit();
+
+        // 重定向到指定的頁面
+        window.location.href = './page7_dashboard.html';
+    });
+
+</script>
 
 </html>

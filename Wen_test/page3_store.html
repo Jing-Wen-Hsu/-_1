@@ -184,17 +184,16 @@
         <br>
 
         <!-- 導覽列 -->
+
         <div class="d-flex sticky-top" style="height: 50px;font-size: larger;">
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page1_takeCareSuc.html';">多肉養護</button>
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page2_sucInterduction.html';">多肉圖鑑</button>
-
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(98, 160, 211, 0.932);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/front%20page_succulent.html'">回到首頁</button>
-
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page5_connection.html'">留言板</button>
+            <a href="./page1_takeCareSuc.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(162, 204, 238); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">多肉養護</a>
+            <a href="./page2_sucInterduction.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(191, 226, 214); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">多肉圖鑑</a>
+            <a href="./front page_succulent.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgba(98, 160, 211, 0.932); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">回到首頁</a>
+            <a href="./page5_connection.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(191, 226, 214); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">留言板</a>
         </div>
 
         <br><br>
@@ -425,7 +424,7 @@
         const password = prompt("請輸入密碼：");
 
         // 檢查帳號和密碼是否匹配
-        if (username === "admin" && password === "123456") {
+        if (username === "admin" && password === "admin") {
             // 登入成功，彈出提示框
             alert("登入成功ヽ(́◕◞౪◟◕‵)ﾉ");
         } else {

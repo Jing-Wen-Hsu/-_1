@@ -2,14 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <!-- BS ICONS https://icons.getbootstrap.com/icons/chat-right-dots-fill/ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>首頁</title>
+
     <style>
+        /*背景圖片*/
         body {
             background-image: url(./image/background2-1.png);
             background-attachment: fixed;
@@ -19,7 +26,7 @@
             width: 80%;
             margin: 0 auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.363);
+            background-color: rgba(252, 247, 247, 0.301);
             /* 示例：添加半透明背景 */
         }
 
@@ -29,60 +36,20 @@
             font-weight: bold;
         }
 
-        /* 表格樣式 .menu */
-
-        .menu {
-            width: 95%;
-            margin: 0 auto;
-            border-collapse: collapse;
-            background-color: rgba(235, 214, 123, 0.521);
-        }
-
-        .menu th,
-        .menu td {
-            border: 2px solid #b1a7a7;
-            padding: 16px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bolder;
-        }
-
-        .menu th {
-            background-color: #b5cab7;
-            font-size: 24px;
-        }
-
-        .menu img {
-            max-width: 150px;
-            height: auto;
-            border-radius: 50px;
-        }
-
-        .bi-cart {
-            font-size: 24px;
-            /* icon及文字大小 */
-            float: right;
-            /* 置於右侧 */
-            margin-right: 20px;
-            /* 增加右邊間距 */
-        }
-
-        /* button2-Top */
-        .floating-button2 {
+        .floating-button {
             position: fixed;
-            bottom: 150px;
-            /* 距離底部的距離 */
-            left: 15px;
-            /* 距離右側的距離 */
-
+            bottom: 50px;
+            /* 距离底部的距离 */
+            right: 50px;
+            /* 距离右侧的距离 */
+            z-index: 1000;
+            /* 确保在其他内容之上 */
         }
 
-        .floating-button2 button {
+        .floating-button button {
             padding: 10px 20px;
-            background-color: #cee9377c;
-            /* 按钮背景色 */
-            color: #df1b01;
-            /* 文字颜色 */
+            background-color: #bbfa29b7;
+            color: #043104;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -93,11 +60,10 @@
             /* 添加平滑过渡效果 */
         }
 
-        .floating-button2 button:hover {
-            transform: translateY(-5px);
+        .floating-button button:hover {
+            transform: translateY(-10px);
             /* 按钮向上漂浮一点 */
         }
-
 
         /*固定列*/
         .rounded-btn {
@@ -108,27 +74,59 @@
             font-size: x-large;
         }
 
-        /* button2 TOP */
-        .floating-button2 button {
-            padding: 10px 20px;
-            background-color: #3a9971b7;
-            color: #063506;
-            right: 2%;
-            bottom: 2%;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            outline: none;
-            position: fixed;
+        .message {
+            display: none;
+            /* 預設隱藏訊息 */
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-top: 10px;
         }
 
-        .floating-button2 button:hover {
-            transform: translateY(-15px);
-            /* 按钮向上漂浮一点 */
+
+        /*標題*/
+        .dlStyle {
+            font-weight: bold;
+            color: rgb(247, 219, 219);
+            background-color: rgba(19, 85, 104, 0.719);
+            font-size: x-large;
         }
+
+        /*多肉簡介下的敘述框*/
+        .dtStyle {
+            background-color: rgba(26, 99, 73, 0.288);
+            font-size: large;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* 最新消息及市集的選單 */
+        .myDtStyle {
+            font-size: large;
+            padding: 3px;
+            margin: 1px;
+            ;
+        }
+
+        /* 鼠標懸停時連結的樣式 */
+        dt a:hover {
+            background-color: rgb(27, 134, 170);
+            color: white;
+            padding: 2px 5px;
+            border-radius: 10px;
+        }
+
+
+        /*最下方資訊欄位*/
+        .box {
+            display: flex;
+            height: 200px;
+            padding: 5px 15px;
+            background-color: #b6f0c97c;
+        }
+
 
         /* 登出按鈕 */
-
         .logoutBtn {
             padding: 10px 20px;
             right: 0;
@@ -153,38 +151,46 @@
             /* position: fixed; */
         }
 
-        /* 查看購物車按鈕 */
-        .cartBtn {
-            background-color: rgba(255, 182, 193, 0.747);
+        /* TopBtn */
+        .topBtn {
+            background-color: #3a9971b7;
+            color: #063506;
+            padding: 10px 20px;
+            bottom: 15%;
+            right: 0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            outline: none;
+            position: fixed;
         }
 
-        /*最下方資訊欄位*/
-        .box {
-            display: flex;
-            height: 200px;
-            padding: 5px 15px;
-            background-color: #b6f0c97c;
-        }
+        /* 所有元素帶出框線以便檢視排版位置 */
+        /* * {
+      border: 1px solid #000;
+    } */
     </style>
-
-    <title>多肉小舖</title>
 
 </head>
 
 <body>
+
     <div class="container">
+
         <div style="display: flex">
 
             <!-- 招牌文字 -->
             <div>
                 <pre>    </pre>
                 <h1 class="myTitle">多肉植物相談所</h1>
-                <h1 style="color: rgba(55, 95, 65, 0.719)">succulent plants</h1>
+                <h1 style="color: rgba(55, 95, 65, 0.719)">Succulent plants</h1>
             </div>
             <!--succulent plants 招牌圖片-->
             <img src="./image/imag_succ_招牌照.jpg" style="width: 200px;height: 200px; display: block" />
 
+            <!-- 登入及登出按鈕 -->
             <div class="d-flex" style="position: fixed;right: 0;">
+
                 <!-- 會員登入按鈕 -->
                 <div class="logInBtn">
                     <button onclick="showMessege()">會員登入</button>
@@ -197,149 +203,302 @@
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
         <br>
 
         <!-- 導覽列 -->
-        <div class="d-flex sticky-top" style="height: 50px;font-size: larger;">
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(162, 204, 238);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page1_takeCareSuc.html';">多肉養護</button>
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page2_sucInterduction.html';">多肉圖鑑</button>
-
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgba(230, 199, 61, 0.719);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/front%20page_succulent.html'">回到首頁</button>
-
-            <button class="col-btn col-3 rounded-btn" style="background-color: rgb(191, 226, 214);"
-                onclick="window.location.href = 'http://127.0.0.1:5501/Wen_test/page5_connection.html'">留言板</button>
+        <div class="d-flex sticky-top" style="height: 50px; font-size: larger;">
+            <a href="./page1_takeCareSuc.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(162, 204, 238); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">多肉養護</a>
+            <a href="./page2_sucInterduction.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(191, 226, 214); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">多肉圖鑑</a>
+            <a href="./page3_store.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(162, 204, 238); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">購買多肉</a>
+            <a href="./page5_connection.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(191, 226, 214); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">留言板</a>
         </div>
 
-        <br><br>
-        <b
-            style="font-size: 28px;color: rgba(204, 59, 83, 0.904);background-color: rgba(245, 244, 245, 0.966);">來挑選心儀的多肉吧(｡•ㅅ•｡)♡</b><br><br>
-
-
-        <!-- 商品陳列 -->
-        <table class="menu">
-            <tr>
-                <th>商品圖片</th>
-                <th>多肉名稱</th>
-                <th>售價</th>
-                <th>購買数量</th>
-                <th>加入購物車</th>
-            </tr>
-            <tr>
-                <td><img src="./image/imag_succ (2).jpg" alt="Product 1"></td>
-                <td>虹之玉</td>
-
-                <td>50元</td>
-                <td><input type="text" value="0" size="2"></td>
-                <td><button class="cartBtn">加入</button></td>
-            </tr>
-            <tr>
-                <td><img src="./image/imag_succ (5).jpg" alt="Product 2"></td>
-                <td>小翠蘆</td>
-                <td>60元</td>
-                <td><input type="text" value="0" size="2"></td>
-                <td><button class="cartBtn">加入</button></td>
-            </tr>
-            <tr>
-                <td><img src="./image/imag_succ (7).jpg" alt="Product 3"></td>
-                <td>金龜子</td>
-                <td>40元</td>
-                <td><input type="text" value="0" size="2"></td>
-                <td><button class="cartBtn">加入</button></td>
-            </tr>
-        </table>
-
-        <br><br>
-        <b style="font-size: 28px;color: rgba(193, 0, 42, 0.808);background-color: rgba(231, 228, 231, 0.979);">下面是你的購物車</b><br><br>
-
-        <!-- 購物車 -->
-        <table class="menu">
-            <tr>
-                <th>商品圖片</th>
-                <th>多肉名稱</th>
-                <th>售價</th>
-                <th>購買数量</th>
-                <th>刪除</th>
-            </tr>
-            <tr>
-                <td><img src="./image/imag_succ (8).jpg" alt="Product 1"></td>
-                <td>朱槿七</td>
-                <td>30元</td>
-                <td><input type="text" value="1" size="2"></td>
-                <td><button class="cartBtn">刪除</button></td>
-            </tr>
-            <tr>
-                <td><img src="./image/imag_succ (4).jpg" alt="Product 2"></td>
-                <td>小牧</td>
-                <td>60元</td>
-                <td><input type="text" value="2" size="2"></td>
-                <td><button class="cartBtn">刪除</button></td>
-            </tr>
-            <tr>
-                <td><img src="./image/imag_succ (6).jpg" alt="Product 3"></td>
-                <td>千鳥</td>
-                <td>50元</td>
-                <td><input type="text" value="3" size="2"></td>
-                <td><button class="cartBtn">刪除</button></td>
-            </tr>
-        </table>
-
-        <!-- 浮动按钮 -->
-        <div class="floating-button2">
-            <button onclick="scrollToTop()">返回顶部</button>
+        <div class="d-flex sticky-top" style="height: 50px; font-size: larger;">
+            <a href="http://127.0.0.1:5501/Wen_test/front%20page_succulent.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgba(98, 160, 211, 0.932); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">回到首頁</a>
+            <a href="http://127.0.0.1:5501/Wen_test/page2_sucInterduction.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(191, 226, 214); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">多肉圖鑑</a>
+            <a href="http://127.0.0.1:5501/Wen_test/page3_store.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(162, 204, 238); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">購買多肉</a>
+            <a href="http://127.0.0.1:5501/Wen_test/page5_connection.html" class="col-btn col-3 rounded-btn"
+                style="background-color: rgb(191, 226, 214); display: block; text-align: center; line-height: 50px;text-decoration: none;color: black;">留言板</a>
         </div>
 
-        <!-- 登出模态框 -->
-        <div class="modal fade" id="logOut" tabindex="-1" aria-labelledby="logOutLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="logOutLabel">确认登出？</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- 輪播圖 -->
+        <hr />
+        <div class="container">
+            <div class="container w-80">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"
+                    data-bs-interval="2000">
+                    <!-- 總張數按鈕 -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary">确认</button>
+
+                    <!-- 照片 -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./image/succulent-4453152_1280.jpg" class="d-block w-100 img-fluid" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/succulent-4713264_1280(size).jpg" class="d-block w-100 img-fluid" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/succulents-757632_1280.jpg" class="d-block w-100 img-fluid" />
+                        </div>
+                    </div>
+
+                    <!-- 前後張按鈕 -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <!-- 認識多肉 -->
+        <div>
+            <dl>
+                <br />
+                <dt class="dlStyle" id="introduce">多肉簡介</dt>
+                <div class="dtStyle" ;>
+                    <dd>
+                        <div style="padding: 18px;">
+                            <p style="font-size: x-large;color: rgba(8, 42, 65, 0.753);">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;多肉植物是一類葉片厚實、儲存水分的植物，因其獨特外觀和容易護理而受到人們喜愛。能在土壤乾旱的條件下擁有肥大的葉或莖甚至是貯藏器官（例如是根莖），多肉植物主要生長於沙漠及海岸乾旱地區。它們的根、莖特別肥大，葉片退化，以利於儲存大量的水分。
+                            </p>
+                        </div>
+                    </dd>
+            </dl>
+            <hr>
+            <br>
+
+            <div>
+
+                <dt style="font-size:36px;background-color: rgba(214, 168, 42, 0.623);color: rgb(146, 89, 14);">訊息分享
+                </dt>
+                <br>
+                <dt class="dlStyle" id="introduce">最新消息</dt>
+                <dt class="myDtStyle"><a
+                        href="http://127.0.0.1:5501/Wen_test/page4_News.html">「多肉植物展覽吸引千名觀眾，展示千種色彩繽紛品種」-2024.02.31</a>
+                </dt>
+                <dt class="myDtStyle"><a
+                        href="http://127.0.0.1:5501/Wen_test/page4_News.html">「研究發現：多肉植物能有效改善室內空氣品質」-2024.02.31</a></dt>
+                <dt class="myDtStyle"><a
+                        href="http://127.0.0.1:5501/Wen_test/page4_News.html">「多肉植物設計趨勢：現代風格與自然元素的完美結合」-2024.02.31</a>
+                </dt>
+                <dt class="myDtStyle"><a
+                        href="http://127.0.0.1:5501/Wen_test/page4_News.html">「多肉植物設計趨勢：現代風格與自然元素的完美結合」-2024.02.30</a>
+                </dt>
+                <dt class="myDtStyle"><a
+                        href="http://127.0.0.1:5501/Wen_test/page4_News.html">「多肉植物設計趨勢：現代風格與自然元素的完美結合」-2024.02.30</a>
+                </dt>
+                <dd>
+                    </dl>
+
+                    <dl>
+                        <dt style="font-size: xx-large;background-color: yellow;"></dt>
+                        <dt class="dlStyle" id="introduce">多肉市集</dt>
+                        <dt class="myDtStyle"><a
+                                href="http://127.0.0.1:5501/Wen_test/page4_News.html">「多肉植物盛會：城市多肉市集開幕！」-2024.02.31</a>
+                        </dt>
+                        <dt class="myDtStyle"><a
+                                href="http://127.0.0.1:5501/Wen_test/page4_News.html">「多肉愛好者聚集！精彩多肉市集即將登場」-2024.02.30</a>
+                        </dt>
+                        <dt class="myDtStyle"><a
+                                href="http://127.0.0.1:5501/Wen_test/page4_News.html">「探索多肉世界：綠意盎然的多肉市集體驗」-2023.11.31</a>
+                        </dt>
+                        <dt class="myDtStyle"><a
+                                href="http://127.0.0.1:5501/Wen_test/page4_News.html">「多肉植物嘉年華：美麗多肉品種與手作市集」-2023.06.31</a>
+                        </dt>
+                        <dt class="myDtStyle"><a
+                                href="http://127.0.0.1:5501/Wen_test/page4_News.html">「迷人多肉市集：發現獨特多肉植物與手工藝品」-2023.02.30</a>
+                        </dt>
+                        <dd>
+                    </dl>
+
+                </dd>
+                </dl>
+            </div>
+
+            <!-- <p><a href="#introduce">回到多肉植物介紹</a><br /></p> -->
+
+            <a href="#"><button class="topBtn">Top↑</button></a>
+
+
+            <div class="modal " tabindex="-1" id="logOut" data-bs-backdrop="static">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">提示訊息</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>是否確認登出?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">再逛一下</button>
+                            <div></div>
+                            <button type="button" class="btn btn-primary" id="pageLogout"
+                                data-bs-dismiss="modal">確認登出</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+                    <div class=" toast bg-warning" id="cancelLogout">
+                        <div class="toast-header">
+                            <span class="me-auto">提示</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">登出成功</div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="modal " tabindex="-1" id="logOut" data-bs-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">提示訊息</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>是否確認登出?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">再逛一下</button>
+                        <div></div>
+                        <button type="button" class="btn btn-primary" id="pageLogout"
+                            data-bs-dismiss="modal">確認登出</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+                <div class=" toast bg-warning" id="cancelLogout">
+                    <div class="toast-header">
+                        <span class="me-auto">提示</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">登出成功</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 登入登出按鈕 -->
+        <div class="modal " tabindex="-1" id="logOut" data-bs-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">提示訊息</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>是否確認登出?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">再逛一下</button>
+                        <div></div>
+                        <button type="button" class="btn btn-primary" id="pageLogout"
+                            data-bs-dismiss="modal">確認登出</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+                <div class=" toast bg-warning" id="cancelLogout">
+                    <div class="toast-header">
+                        <span class="me-auto">提示</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">登出成功</div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <!-- 版權、資訊框 -->
+
+        <div class="box">
+            <div>
+                <b style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;客服資訊</b>
+                <p class="bi bi-clock-fill">&nbsp;服務時間：周一至周五&nbsp;10:00~17:00</p>
+                <p class="bi bi-envelope-fill">&nbsp;電子信箱：succ@gma!l.com</p>
+                <p class="bi bi-telephone-fill">&nbsp;聯絡電話：04-8888-6666</p>
+                <p class="bi bi-signpost-2-fill">&nbsp;聯絡地址：台中市西曬區台灣小道切八段1號102樓</p>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <p style="text-align: center;">LearnForFun Co.,Ltd.版權沒有@</p>
+    </div>
     </div>
 
-    <!-- 以下是修改过的 showMessege 函数 -->
-    <script>
-        function showMessege() {
-            // 使用 prompt 获取输入
-            let username = prompt("请输入帐号：");
-            let password = prompt("请输入密码：");
-
-            // 检查帐号和密码是否匹配
-            if (username === "admin" && password === "admin") {
-                // 登录成功，弹出提示框
-                alert("登录成功！");
-            } else {
-                // 登录失败，弹出提示框
-                alert("登录失败，请检查帐号和密码！");
-            }
-        }
-
-        // 返回顶部按钮的实现
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    </script>
-
-    <!-- 引入 Bootstrap 的 JS 文件，确保模态框功能正常 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-wJ/Cf8ZFAkEA7RXsRMNTPoOOZ7Gw9sZfRTS18dD2/C0CkccG0oheH2hBm8vS8RrG" crossorigin="anonymous">
-    </script>
 </body>
+<script src="../_js/bootstrap.bundle.js"></script>
+
+<script>
+
+    //登出按鈕
+
+    const toastLogout = document.getElementById('pageLogout')
+    const toastNoLogout = document.getElementById('cancelLogout')
+    if (toastLogout) {
+        toastLogout.addEventListener('click', () => {
+            const toast = new bootstrap.Toast(toastNoLogout)
+
+            toast.show()
+        })
+    }
+
+</script>
+
+<!-- 會員登入 輸入帳密後的提示 -->
+<script>
+    function showMessege() {
+        // 使用 prompt 獲取輸入
+        const username = prompt("請輸入帳號：");
+        const password = prompt("請輸入密碼：");
+
+        // 檢查帳號和密碼是否匹配
+        if (username === "admin" && password === "admin") {
+            // 登入成功，彈出提示框
+            alert("登入成功ヽ(́◕◞౪◟◕‵)ﾉ");
+        } else {
+            // 登录失敗，彈出提示框
+            alert("登入失敗，請檢查帳號和密碼(｡í _ ì｡)");
+        }
+    }
+</script>
 
 </html>
